@@ -1,0 +1,168 @@
+<section>
+    <div class="container1440 mt-5">
+         <h5 class="application_pro">Application Form</h5>
+         <div class="application-form mt-5">
+               <form [formGroup]="section13Form">
+                     <div class="academic">
+                           <h5 class="application_pro">Document Upload Section</h5>
+
+                           <div class="form-group mt-3">
+                              <label >Upload a Personal Statement :</label>
+                              <input type="text" class="form-control" placeholder="Upload" formControlName="personalStatement" disabled
+                              [ngClass]="{ 'is-invalid': submitted && section13Form.get('personalStatement').hasError('required') }" >
+                              <i class="fa fa-paperclip" aria-hidden="true"></i>
+                              <input type="file" class="file" style="position: absolute;top: 45px;right: -154px;opacity: 0;cursor: pointer;" 
+                              (change)="handleFileInput($event,'personalStatement')" accept="application/pdf,application/vnd.ms-excel" />
+                                 <div *ngIf="submitted && section13Form.get('personalStatement').hasError" >
+                                       <div *ngIf="section13Form.get('personalStatement').hasError('required')" class="danger">
+                                             *please enter the personalStatement
+                                       </div>
+                                 </div>
+                           </div>
+
+                           <div class="form-group mt-3">
+                              <label >Upload a Research Proposal (for PGR only) :</label>
+                              <input type="text" class="form-control" placeholder="Upload" formControlName="researchPersonal" disabled
+                              [ngClass]="{ 'is-invalid': submitted && section13Form.get('researchPersonal').hasError('required') }" >
+                              <i class="fa fa-paperclip" aria-hidden="true"></i>
+                              <input type="file" class="file" style="position: absolute;top: 45px;right: -154px;opacity: 0;cursor: pointer;" 
+                              (change)="handleFileInput($event,'researchPersonal')" accept="application/pdf,application/vnd.ms-excel" />
+                              <div *ngIf="submitted && section13Form.get('researchPersonal').hasError" >
+                                 <div *ngIf="section13Form.get('researchPersonal').hasError('required')" class="danger">
+                                    *please enter the researchPersonal
+                                 </div>
+                              </div>
+                           </div>
+
+                           <div class="form-group mt-3">
+                              <label >Upload CV : </label>
+                              <input type="text" class="form-control" placeholder="Upload" formControlName="cv" disabled
+                              [ngClass]="{ 'is-invalid': submitted && section13Form.get('cv').hasError('required') }" >
+                              <i class="fa fa-paperclip" aria-hidden="true"></i>
+                              <input type="file" class="file" style="position: absolute;top: 45px;right: -154px;opacity: 0;cursor: pointer;" 
+                              (change)="handleFileInput($event,'cv')" accept="application/pdf,application/vnd.ms-excel" />
+                              <div *ngIf="submitted && section13Form.get('cv').hasError" >
+                                 <div *ngIf="section13Form.get('cv').hasError('required')" class="danger">
+                                    *please enter the cv
+                                 </div>
+                              </div>
+                           </div>
+
+                           <div class="form-group mt-3">
+                              <label >Upload Transcript :</label>
+                              <input type="text" class="form-control" placeholder="Upload"  formControlName="transcript" disabled
+                              [ngClass]="{ 'is-invalid': submitted && section13Form.get('transcript').hasError('required') }" >
+                              <i class="fa fa-paperclip" aria-hidden="true"></i>
+                              <input type="file" class="file" style="position: absolute;top: 45px;right: -154px;opacity: 0;cursor: pointer;" 
+                              (change)="handleFileInput($event,'transcript')" accept="application/pdf,application/vnd.ms-excel" />
+                              <div *ngIf="submitted && section13Form.get('transcript').hasError" >
+                                 <div *ngIf="section13Form.get('transcript').hasError('required')" class="danger">
+                                    *please enter the transcript
+                                 </div>
+                              </div>
+                           </div>
+
+                           <div class="form-group mt-3">
+                              <label >Upload Degree Certificate :</label>
+                              <input type="text" class="form-control" placeholder="Upload"  formControlName="degreeCertificate" disabled
+                              [ngClass]="{ 'is-invalid': submitted && section13Form.get('degreeCertificate').hasError('required') }" >
+                              <i class="fa fa-paperclip" aria-hidden="true"></i>
+                              <input type="file" class="file" style="position: absolute;top: 45px;right: -154px;opacity: 0;cursor: pointer;" 
+                              (change)="handleFileInput($event,'degreeCertificate')" accept="application/pdf,application/vnd.ms-excel" />
+                              <div *ngIf="submitted && section13Form.get('degreeCertificate').hasError" >
+                                 <div *ngIf="section13Form.get('degreeCertificate').hasError('required')" class="danger">
+                                    *please enter the degreeCertificate
+                                 </div>
+                              </div>
+                           </div>
+
+                           <div class="form-group mt-3">
+                              <label >Upload Copy of English Language Certificate :</label>
+                              <input type="text" class="form-control" placeholder="Upload"  formControlName="englishLanguageCertificate" disabled
+                              [ngClass]="{ 'is-invalid': submitted && section13Form.get('englishLanguageCertificate').hasError('required') }" >
+                              <i class="fa fa-paperclip" aria-hidden="true"></i>
+                              <input type="file" class="file" style="position: absolute;top: 45px;right: -154px;opacity: 0;cursor: pointer;" 
+                              (change)="handleFileInput($event,'englishLanguageCertificate')" accept="application/pdf,application/vnd.ms-excel" />
+                              <div *ngIf="submitted && section13Form.get('englishLanguageCertificate').hasError" >
+                                 <div *ngIf="section13Form.get('englishLanguageCertificate').hasError('required')" class="danger">
+                                    *please enter the englishLanguageCertificate
+                                 </div>
+                              </div>
+                           </div>
+
+                           <div class="form-group mt-3">
+                              <label >Upload Other Documents :</label>
+                              <input type="text" class="form-control" placeholder="Upload"  formControlName="otherDocument" disabled
+                              [ngClass]="{ 'is-invalid': submitted && section13Form.get('otherDocument').hasError('required') }" >
+                              <i class="fa fa-paperclip" aria-hidden="true"></i>
+                              <input type="file" class="file" style="position: absolute;top: 45px;right: -154px;opacity: 0;cursor: pointer;" 
+                              (change)="handleFileInput($event,'otherDocument')" accept="application/pdf,application/vnd.ms-excel" />
+                              <div *ngIf="submitted && section13Form.get('otherDocument').hasError" >
+                                 <div *ngIf="section13Form.get('otherDocument').hasError('required')" class="danger">
+                                    *please enter the otherDocument
+                                 </div>
+                              </div>
+                           </div>
+<!-- 
+                           <div class="form-group mt-3">
+                              <label >Disclaimer Statement :</label>
+                              <input type="text" class="form-control" placeholder="Upload"  formControlName="disclaimer" disabled
+                              [ngClass]="{ 'is-invalid': submitted && section13Form.get('disclaimer').hasError('required') }" >
+                              <i class="fa fa-paperclip" aria-hidden="true"></i>
+                              <input type="file" class="file" style="position: absolute;top: 45px;right: -154px;opacity: 0;cursor: pointer;" 
+                              (change)="handleFileInput($event,'disclaimer')" accept="application/pdf,application/vnd.ms-excel" />
+                              <div *ngIf="submitted && section13Form.get('disclaimer').hasError" >
+                                 <div *ngIf="section13Form.get('disclaimer').hasError('required')" class="danger">
+                                    *please enter the disclaimer
+                                 </div>
+                              </div>
+                           </div> -->
+                           <div class="custom">
+                              <label><strong> Disclaimer Statement : </strong></label>
+                              <label class="custom-checkbox">I certify that the information contained in this application is correct to the best of my knowledge. I confirm that all supporting documents enclosed along with the application are genuine copies. I understand that to falsify information is grounds for refusing to offer me a place of acceptance for study. I also acknowledge that my offer or acceptance for study will be withdrawn, at any time, if any supporting documents are found to be fraudulent.
+                                <input type="checkbox" checked="checked" 
+                                formControlName="checkForDisclaimer">
+                                <span class="checkmark"></span>
+                              </label>
+                          </div>
+                     </div>  
+                     <div class="cntact-button back" *ngIf="mbaExist">
+                           <button class="theme-btn router-link" [routerLink]="['/section11']">Back</button>
+                           <button class="theme-btn router-link active" (click)="continue()">Continue</button>
+                           <button class="theme-btn router-link" (click)="saveAndQuit()">Save and Quit</button>
+                     </div>
+                     <div class="cntact-button back" *ngIf="!mbaExist && !executiveMbaExist">
+                        <button class="theme-btn router-link" [routerLink]="['/section11']">Back</button>
+                        <button class="theme-btn router-link active" (click)="preview()">Preview</button>
+                   </div>
+               </form>
+         </div>          
+   </div>
+</section>
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+       <div class="modal-content">
+       <div class="modal-header">
+           <h5 class="modal-title" id="exampleModalLongTitle">&nbsp;</h5>
+       </div>
+       <div class="modal-body">
+           Congratulations your form has been submitted successfully!You will get the email notification of each status of your form.
+       </div>
+       <div class="modal-footer">
+           <button type="button" class="theme-btn router-link  okay" data-dismiss="modal" [routerLink]="['/dashboard']">OK</button>
+       </div>
+       </div>
+   </div>
+</div>
+
+
+<div class="modal fade bd-example-modal-sm" id="exceedStorage"  tabindex="-1" role="dialog" aria-labelledby="exampleModalCenter" aria-hidden="true">
+   <div class="modal-dialog modal-sm">
+     <div class="modal-content thanks_for">
+      <h6>File size exceeds 2 MB.</h6>
+           <div>
+           <button class="banner-button active" data-toggle="modal" data-target="#exampleModal" data-dismiss="modal" >Ok</button> </div>
+         </div>
+   </div>
+</div>

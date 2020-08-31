@@ -1,0 +1,48 @@
+<section>
+    <div class="container1440 mt-5">
+        <h5 class="application_pro">Application Form</h5>
+          <div class="application-form mt-5">
+            <div class="academic">
+              <h5 class="application_pro">Personal Statement</h5>
+              <p>*Please supply a statement of 700 words indicating why you have chosen to apply for this programme, what you think you can bring to the programme and what you hope to achieve from the programme.</p>
+              
+              <div class="University-name cs3">  
+                <label class="custom-checkbox">Please indicate here if you  have uploaded a personal statement instead of completing the field.
+                  <input type="checkbox" checked="checked"  [(ngModel)]="uploadState">
+                  <span class="checkmark"></span>
+                </label>   
+              </div>             
+                <div class="form-group">
+                  <label class="des_cs">Description:</label>
+                  <textarea class="form-control" rows="4" [(ngModel)]="description" maxlength="4000"></textarea>
+                  <div *ngIf="submitted && description == '' && !uploadState" >
+                    <div *ngIf="description == ''" class="danger">
+                        *please enter the Description
+                    </div>
+                  </div>
+                </div>
+            </div>  
+            <div class="cntact-button back">
+              <button class="theme-btn router-link" [routerLink]="['/section7']">Back</button>
+              <button class="theme-btn router-link active" (click)="continue()">Continue</button>
+              <button class="theme-btn router-link" (click)="saveAndQuit()">Save and Quit</button>
+            </div>
+        </div>          
+    </div>
+  </section>
+
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">&nbsp;</h5>
+        </div>
+        <div class="modal-body">
+            Congratulations your form has been submitted successfully!You will get the email notification of each status of your form.
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="theme-btn router-link  okay" data-dismiss="modal" [routerLink]="['/dashboard']">OK</button>
+        </div>
+        </div>
+    </div>
+</div>

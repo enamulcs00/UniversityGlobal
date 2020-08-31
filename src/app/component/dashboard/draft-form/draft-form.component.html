@@ -1,0 +1,101 @@
+<section>
+  <div class="container1440 mt-5">
+    <div class="application_cs">
+      <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+        <li class="nav-item create_new">
+          <a class="nav-link find  " id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
+            aria-controls="pills-home" [routerLink]="['/section1']" aria-selected="true">Create New Application</a>
+        </li>
+        <li class="nav-item create_new">
+          <a class="nav-link active" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
+            aria-controls="pills-profile" [routerLink]="['/draft-form']" aria-selected="false">Find and Continue
+            Incomplete Applications</a>
+        </li>
+        <li class="nav-item create_new">
+          <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab"
+            aria-controls="pills-contact" [routerLink]="['/dashboard']" aria-selected="false">Submitted Application or
+            Applicants</a>
+        </li>
+        <li class="nav-item create_new">
+          <a class="nav-link find " id="pills-contact-tab" data-toggle="pill" href="#pills-contact1" role="tab"
+            aria-controls="pills-contact" [routerLink]="['/report']" aria-selected="false">Reports</a>
+        </li>
+      </ul>
+
+
+      <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade " id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">...</div>
+        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+        <div class="tab-pane fade show active" id="pills-incomplete" role="tabpanel"
+          aria-labelledby="pills-contact-tab">
+
+
+          <div class="search_section mt-5 mb-5">
+
+            <ul>
+              <li>
+                <label>&nbsp;</label>
+                <input type="text" class="form-control" placeholder="Search" [(ngModel)]="searchKey">
+                <img src="assets/images/search-icon.png">
+              </li>
+              <li>
+                <label>&nbsp;</label>
+                <select class="form-control" [(ngModel)]="formId">
+                  <option value="search_by_form_id">Search by Form ID</option>
+                  <option value="submitted_by">Submiited By </option>
+                  <option value="candidate_name">Candidate Name </option>
+                </select>
+                <img src="assets/images/icon-drop.png">
+              </li>
+              <li>
+                <label>From</label>
+                <input type="date" class="form-control" placeholder="MM/DD/YY" [(ngModel)]="fromDate">
+              </li>
+              <li>
+                <label>To</label>
+                <input type="date" class="form-control" placeholder="MM/DD/YY" [(ngModel)]="toDate">
+              </li>
+              <li>
+                <label>&nbsp;</label>
+                <div class="cntact-button">
+                  <button class="theme-btn router-link" style="margin-right: 10px;"
+                    (click)="getForms()">Submit</button>
+                  <button class="theme-btn router-link" (click)="reset()">Reset</button>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+
+          <div class="main_formId mt-4" *ngFor="let item of formsList;">
+            <div class="form_submit">
+              <div class="condidated_name update">
+                <ul>
+                  <li><strong>Form ID :</strong> </li>
+                  <li><strong>Submitted By :</strong></li>
+                  <li><strong>Candidate Name :</strong> </li>
+                  <li><strong>Update form date:</strong> </li>
+                </ul>
+              </div>
+
+              <div class="condidated_name update">
+                <ul>
+                  <li>{{item?.formId}}</li>
+                  <li>{{item?.email}} </li>
+                  <li>{{item?.email}}</li>
+                  <li>{{item?.creationTime  | date : 'short'}}</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="viewform continue">
+              <button class="theme-btn router-link" (click)="continueForm(item.formId)">Continue</button>
+            </div>
+          </div>
+
+        </div>
+        <div class="tab-pane fade" id="pills-contact1" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+      </div>
+    </div>
+  </div>
+</section>

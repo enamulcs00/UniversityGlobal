@@ -1,0 +1,21 @@
+.pick_cs{
+    width: 77%  !important;
+    border-radius: 85px !important;
+}
+p.danger {
+    color: red;
+    font-size: 14px;
+    margin-left: -56px !important;
+    text-align: right !important;
+    width: 100%;
+    max-width: 100%;
+}
+.cntact-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0px 65px !important;
+}
+.modal-body{
+    margin-bottom: 10px;
+}

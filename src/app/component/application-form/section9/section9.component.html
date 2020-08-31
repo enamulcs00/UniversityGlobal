@@ -1,0 +1,128 @@
+<section>
+    <div class="container1440 mt-5">
+        <h5 class="application_pro">Application Form</h5>
+        <div class="application-form mt-5">
+            <form [formGroup]="section9Form">
+                <div class="academic">
+                    <h5 class="application_pro">Scholarships</h5>
+                    <p class="do_you">Do you currently have funding for your chosen programme of study?</p>
+                    <div class="custom-button">
+                        <label class="custom-radio">Yes
+                            <input type="radio" checked="checked" value="true" name="currentlyFundingForStudy" formControlName="currentlyFundingForStudy">
+                            <span class="checkmark_cs3"></span>
+                        </label>
+
+                        <label class="custom-radio">No
+                            <input type="radio" checked="checked" value="false" name="currentlyFundingForStudy" formControlName="currentlyFundingForStudy">
+                            <span class="checkmark_cs3"></span>
+                        </label>
+                    </div>
+                    <div *ngIf="submitted && section9Form.get('currentlyFundingForStudy').hasError" >
+                      <div *ngIf="section9Form.get('currentlyFundingForStudy').hasError('required')" class="danger radio_danger">
+                        *please choose
+                      </div>
+                    </div>
+
+
+                    <p class="do_you">Are you intending to apply for external funding?</p>
+                    <div class="custom-button">
+                        <label class="custom-radio">Yes
+                            <input type="radio" checked="checked" value="true" (change)="change($event)" name="applyForExternalFunding" formControlName="applyForExternalFunding">
+                            <span class="checkmark_cs3"></span>
+                        </label>
+
+                        <label class="custom-radio">No
+                            <input type="radio" checked="checked" value="false" (change)="change($event)" name="applyForExternalFunding" formControlName="applyForExternalFunding">
+                            <span class="checkmark_cs3"></span>
+                        </label>
+                    </div>
+                    <div *ngIf="submitted && section9Form.get('applyForExternalFunding').hasError" >
+                      <div *ngIf="section9Form.get('applyForExternalFunding').hasError('required')" class="danger radio_danger">
+                          *please choose
+                      </div>
+                    </div>
+
+                    <p class="do_you">If yes, what funding are you applying for?</p>
+                    <div class="form-group">
+                        <label class="des_cs">Description:</label>
+                        <textarea class="form-control" rows="4" formControlName="externalFundingDescription"></textarea>
+                        <div *ngIf="submitted && section9Form.get('externalFundingDescription').hasError" >
+                          <div *ngIf="section9Form.get('externalFundingDescription').hasError('required')" class="danger radio_danger">
+                              *please enter the Description
+                          </div>
+                        </div>    
+                    </div>
+
+                    <p class="do_you">Do you wish to apply for (be considered for) University funding?</p>
+                    <div class="custom-button">
+                        <label class="custom-radio">Yes
+                            <input type="radio" checked="checked" value="true" name="applyForUniversityFunding" formControlName="applyForUniversityFunding">
+                            <span class="checkmark_cs3"></span>
+                        </label>
+
+                        <label class="custom-radio">No
+                            <input type="radio" checked="checked" value="false" name="applyForUniversityFunding" formControlName="applyForUniversityFunding">
+                            <span class="checkmark_cs3"></span>
+                        </label>
+                    </div>
+                    <div *ngIf="submitted && section9Form.get('applyForUniversityFunding').hasError" >
+                        <div *ngIf="section9Form.get('applyForUniversityFunding').hasError('required')" class="danger radio_danger">
+                              *please choose
+                        </div>
+                    </div>
+
+                    <p class="do_you">If yes, which (or what)?</p>
+                    <div class="form-group">
+                        <label class="des_cs">Description:</label>
+                        <textarea class="form-control" rows="4" formControlName="universityFundingDescription"></textarea>
+                    </div>
+
+                    <p class="do_you">Do you wish to be considered for University/ department scholarships/bursaries?</p>
+                    <div class="custom-button">
+                        <label class="custom-radio">Yes
+                            <input type="radio" checked="checked" value="true" name="wishForUniversityScholarship" formControlName="wishForUniversityScholarship">
+                            <span class="checkmark_cs3"></span>
+                        </label>
+
+                        <label class="custom-radio">No
+                            <input type="radio" checked="checked" value="false" name="wishForUniversityScholarship" formControlName="wishForUniversityScholarship">
+                            <span class="checkmark_cs3"></span>
+                        </label>
+                    </div>
+                    <div *ngIf="submitted && section9Form.get('wishForUniversityScholarship').hasError" >
+                      <div *ngIf="section9Form.get('wishForUniversityScholarship').hasError('required')" class="danger radio_danger">
+                          *please choose
+                      </div>
+                    </div>
+
+                    <p class="do_you">If yes, which one?</p>
+                    <div class="form-group">
+                        <label class="des_cs">Description :</label>
+                        <textarea class="form-control" rows="4" formControlName="wishForUniversityScholarshipDescription"></textarea>
+                    </div>
+                </div>
+                <div class="cntact-button back">
+                    <button class="theme-btn router-link" [routerLink]="['/section8']">Back</button>
+                    <button class="theme-btn router-link active" (click)="continue()">Continue</button>
+                    <button class="theme-btn router-link" (click)="saveAndQuit()">Save and Quit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">&nbsp;</h5>
+        </div>
+        <div class="modal-body">
+            Congratulations your form has been submitted successfully!You will get the email notification of each status of your form.
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="theme-btn router-link  okay" data-dismiss="modal" [routerLink]="['/dashboard']">OK</button>
+        </div>
+        </div>
+    </div>
+</div>

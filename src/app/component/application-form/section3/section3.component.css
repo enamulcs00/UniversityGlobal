@@ -1,0 +1,25 @@
+/* @import url('../../../../../node_modules/intl-tel-input/build/css/intlTelInput.css'); */
+.custom {
+    width: 670px !important;
+    border-radius: 7px !important;
+    border-color: #efefef !important;
+    height: 45px !important;
+}
+p.danger {
+    color: red !important;
+}
+.intl-tel-input.separate-dial-code {
+    padding-left: 178px !important;
+}
+input#adsasd {
+    width: 670px !important;
+}
+.intl-tel-input{
+    display: revert !important;
+}
+input#adsasd2 {
+    width: 670px !important;
+}
+label {
+    margin-right: 20%;
+}

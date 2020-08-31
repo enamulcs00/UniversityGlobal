@@ -1,0 +1,97 @@
+
+  <section class="login-ection"  style="margin-bottom: -3rem;">
+    <div class="login-box">
+  
+      <!-- /.login-logo -->
+      <div class="login-box-body box-bdy">
+        <h4 class="login-box-msg" style="text-align:center" style="font-size: 29px;"><strong>LOGIN</strong></h4>
+    
+        <form  [formGroup]="loginForm">
+          <div class="form-group">
+       
+          <div class="has-feedback">
+            <label>Email</label>
+           
+            <input type="email" class="form-control" placeholder="Email" formControlName="email" (keydown.space)="$event.preventDefault();"   style="height: 44px;">
+            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            <div *ngIf="loginForm.get('email').hasError('required') && loginForm.get('email').touched"><span style="color:red">*Please enter email id.</span></div>
+              <div *ngIf="loginForm.controls['email'].hasError('maxlength')"><span style="color:red">*Maxlength should be 60 characters</span></div>
+              <div *ngIf="loginForm.controls['email'].hasError('pattern')"><span style="color:red">*Please enter valid email id.</span>
+              
+          </div>
+          </div>
+   
+          </div>
+  
+  
+          <div class="form-group">
+              <div class="has-feedback">
+  
+              <label>Password</label>  
+                  <!-- <label>Password</label> -->
+           <div class="has-feedback" style="align-items: center;padding-top: 5px;">
+             
+            <input type="{{type}}" #hello class="form-control" id="myInput"  placeholder="Password" formControlName="password" style="height: 44px;">
+            <!-- <span class="glyphicon glyphicon-envelope login-box-msg"></span> -->
+  
+            <a class="eye-icon" style="position: absolute;
+            right: 2%;top: 42%;color: #777777;" (click)="toggleShow()">
+              <i *ngIf="show == false" class="fa fa-eye-slash"></i>
+              <i *ngIf="show == true" class="fa fa-eye"></i>
+            </a>
+         <!-- <a style="position: absolute;padding-right: 12px;"*ngIf="!show" >
+            <i  (click)="toggleShow(hello.type)" class="fa fa-eye-slash"></i>
+         
+     </a> -->
+          </div>
+          <div *ngIf="loginForm.get('password').hasError('required') && loginForm.get('password').touched">
+            <span style="color:red">*Please enter password. </span></div>
+            <div *ngIf="loginForm.controls['password'].hasError('minlength')"><span style="color:red">*Minlength  should be 8 characters.</span></div>
+            <div *ngIf="loginForm.controls['password'].hasError('maxlength')"><span style="color:red">*Maxlength  should be 16 characters.</span></div>
+  
+              <!-- <input type="checkbox" name="remember" formControlName="remember"   style="margin-bottom:15px;"> Remember Me -->
+  
+  
+             <div class="remember-div">
+              <label class="remember mt-2">Remember Me
+                <input type="checkbox" name="remember" formControlName="remember" checked="checked">
+                <span class="checkmark"></span>
+              </label>
+  
+              <p  style="cursor: pointer;color: #000;width: 100%;text-align: right;"><u class="p1" [routerLink]="['/forget-password']" style="color: #896633;">Forgot your Password ?</u></p>
+  
+             </div>
+          <div class="">
+          
+           </div>
+           </div>
+          </div>
+  
+  
+  
+          
+  
+          <div class="row">
+           
+            <!-- /.col -->
+            <div class="col-xs-4 lognBrn">
+                <!-- [disabled]="!loginForm.valid" -->
+              <button type="submit"  class="btn btn-block btn-flat router-link" [disabled]="loginForm.invalid"  (click)="login()">LOGIN</button>
+            </div>
+            <!-- /.col -->
+          </div>
+        </form>
+      </div>
+      <!-- /.login-box-body -->
+    </div>
+  </section>
+  
+<div class="modal fade bd-example-modal-sm" id="loginModal"  tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content thanks_for">
+      <h6>{{responseMessage}}</h6>
+          <div>
+          <button class="banner-button active" data-toggle="modal" data-target="#exampleModalCenter" data-dismiss="modal" [routerLink]="['/login']" >Ok</button> </div>
+        </div>
+  </div>
+</div>

@@ -1,0 +1,99 @@
+<section>
+    <div class="container1440 mt-5">
+        <div class="subscribe">
+            <div class="left_section">
+                <div class="pick_cs">
+                    <a>
+                        <img src="{{accountData.imageUrl}}">
+                    </a>
+                    <p>{{accountData.firstName}}</p>
+                </div>
+
+                <div class="changs">
+                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <a class="nav-link general_cs" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
+                          aria-controls="v-pills-home" aria-selected="true" [routerLink]="['/my-profile']">Manage General
+                          Info</a>
+                        <a class="nav-link general_cs" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile"
+                          role="tab" aria-controls="v-pills-profile" aria-selected="false"
+                          [routerLink]="['/change-password']">Change Password</a>
+                        <a class="nav-link active general_cs" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages"
+                          role="tab" aria-controls="v-pills-messages" aria-selected="false" [routerLink]="['/my-subscription']"
+                          *ngIf="accountData?.role != 'REPRESENTATIVE_USER'">My
+                          Subscription</a>
+                        <a class="nav-link  general_cs" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings"
+                          role="tab" aria-controls="v-pills-settings" aria-selected="false"
+                          [routerLink]="['/subscription-history']">Subscription History</a>
+                        <a class="nav-link general_cs" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings1"
+                          role="tab" aria-controls="v-pills-settings" aria-selected="false" [routerLink]="['/manage-users']"
+                          *ngIf="accountData?.role != 'REPRESENTATIVE_USER'">Manage
+                          Users</a>
+                        <a class="nav-link general_cs" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings2"
+                          role="tab" aria-controls="v-pills-settings" aria-selected="false" [routerLink]="['/create-users']"
+                          *ngIf="accountData?.role != 'REPRESENTATIVE_USER'">Create
+                          User</a>
+                    </div>
+                </div>
+            </div>
+            <div class="right-section">
+                  <h3 class="manage">My Subscription</h3>
+                  <div class="tab-content" id="v-pills-tabContent">
+                      <div class="tab-pane fade  " id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                      </div>
+                      <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                      </div>
+                      <div class="tab-pane fade show active" id="v-pills-messages" role="tabpanel"
+                        aria-labelledby="v-pills-messages-tab">
+                          <div class="number_of">
+                              <div class="my_user">
+                                  <div class="user-lince">
+                                      <div class="img_cs">
+                                          <figure>
+                                              <img src="{{subscriptionDetails?.imageUrl ? subscriptionDetails?.imageUrl : 'assets/images/image-1.png'}}">
+                                          </figure>
+                                      </div>
+                                    <div class="month_cs sub">
+                                        <ul>
+                                            <h1>{{subscriptionDetails?.subscriptionModel}}</h1>
+                                            <li>{{subscriptionDetails?.validity}} Months Subscription</li>
+                                            <li>Cost : ${{subscriptionDetails?.cost}}</li>
+                                            <li>No of User Licenses: {{subscriptionDetails?.noOfUserLicences}}</li>
+                                        </ul>
+                                    </div>
+                                  </div>
+                                  <div>
+                                      <p style="max-width: 70%;margin: 5% auto;">
+                                          {{subscriptionDetails?.description}}
+                                      </p>
+                                  </div>
+                                  <div class="cntact-button">
+                                      <button class="theme-btn router-link" [routerLink]="['/my-subscription']">Back</button>
+                                      <button class="theme-btn router-link" (click)="addToCart()">Add to Cart</button>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...
+                      </div>
+                      <div class="tab-pane fade" id="v-pills-settings1" role="tabpanel" aria-labelledby="v-pills-settings-tab">...
+                      </div>
+                      <div class="tab-pane fade" id="v-pills-settings2" role="tabpanel" aria-labelledby="v-pills-settings-tab">...
+                      </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="modal fade bd-example-modal-sm" id="resetPassword" tabindex="-1" role="dialog"
+  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content thanks_for">
+            <h6>{{responseMessage}}</h6>
+            <div>
+                <button class="banner-button active" data-toggle="modal" data-target="#exampleModalCenter" data-dismiss="modal"
+                  [routerLink]="['/subscription-history']">Ok</button> 
+            </div>
+        </div>
+    </div>
+</div>

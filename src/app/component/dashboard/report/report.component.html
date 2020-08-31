@@ -1,0 +1,141 @@
+<section>
+  <div class="container1440 mt-5">
+    <div class="application_cs">
+      <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+        <li class="nav-item create_new">
+          <a class="nav-link find  " id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
+            aria-controls="pills-home" [routerLink]="['/section1']" aria-selected="true">Create New Application</a>
+        </li>
+        <li class="nav-item create_new">
+          <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
+            aria-controls="pills-profile" [routerLink]="['/draft-form']" aria-selected="false">Find and Continue
+            Incomplete Applications</a>
+        </li>
+        <li class="nav-item create_new">
+          <a class="nav-link " id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab"
+            aria-controls="pills-contact" [routerLink]="['/dashboard']" aria-selected="false">Submitted Application or
+            Applicants</a>
+        </li>
+        <li class="nav-item create_new">
+          <a class="nav-link find active" id="pills-contact-tab" data-toggle="pill" href="#pills-contact1" role="tab"
+            aria-controls="pills-contact" [routerLink]="['/report']" aria-selected="false">Reports</a>
+        </li>
+      </ul>
+
+
+
+      <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade " id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">...</div>
+        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+        <div class="tab-pane fade show active" id="pills-contact1" role="tabpanel" aria-labelledby="pills-contact-tab">
+
+
+          <div class="search_university mt-5">
+            <div class="University-name">
+              <select class="form-control" [(ngModel)]="countryName">
+                <option value="" selected>Select Country</option>
+                <option *ngFor="let data of countryList" [value]="data.country">{{data.country}}</option>
+              </select>
+              <i class="fa fa-sort-down"></i>
+            </div>
+
+            <div class="cntact-button">
+              <button class="theme-btn router-link" style="margin-right: 10px;" (click)="reportCountApi()">Submit</button>
+              <button class="theme-btn router-link" (click)="resetCount()">Reset</button>
+            </div>
+          </div>
+
+          <div class="row pt-5">
+            <div class="col-lg-3 col-md-6 col-md-12">
+              <div class="total-applied">
+                <p>Total number of applications <br>submitted today.</p>
+                <h4>{{reportsCountData?.dayCount}}</h4>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-md-12">
+              <div class="total-applied">
+                <p>Total number of applications <br>submitted this week.</p>
+                <h4>{{reportsCountData?.weekCount}}</h4>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-md-12">
+              <div class="total-applied">
+                <p>Total number of applications submitted<br> in the month {{month}}</p>
+                <h4>{{reportsCountData?.monthCount}}</h4>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-md-12">
+              <div class="total-applied">
+                <p>Total number of applications submitted<br> in the year {{year}}</p>
+                <h4>{{reportsCountData?.yearCount}}</h4>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="date_section">
+            <ul>
+              <li class="dates">
+                <label>&nbsp;</label>
+                Date:
+              </li>
+              <li>
+                <label>From</label>
+                <input type="date" class="form-control" placeholder="MM/DD/YY" [(ngModel)]="fromDate">
+                <!-- <i class="fa fa-calendar" aria-hidden="true"></i> -->
+              </li>
+              <li>
+                <label>To</label>
+                <input type="date" class="form-control" placeholder="MM/DD/YY" [(ngModel)]="toDate">
+                <!-- <i class="fa fa-calendar" aria-hidden="true"></i> -->
+              </li>
+              <li>
+                <label>&nbsp;</label>
+                <div class="cntact-button">
+                  <button class="theme-btn router-link" style="margin-right: 10px;"
+                    (click)="searchReportChart()">Submit</button>
+                  <button class="theme-btn router-link" (reset)="reset()">Reset</button>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+
+
+          <div class="progress-chart">
+            <h2>Application submitted from {{ fromDateView}} - {{ toDateView}}</h2>
+
+            <!-- <div class="graph_sec"><img src="assets/images/graph-1.png"></div> -->
+            <div id="chartdiv" style="width: 100%; height: 500px"></div>
+
+            <!-- <div class="chart1">
+                    <ul>
+                      <li>Conditional<br>Offered</li>
+                      <li>Conditional Firm</li>
+                      <li>Conditional Firm</li>
+                      <li>Conditional<br>Offered</li>
+                       <li>Conditional Firm</li>
+                      <li>Conditional Firm</li>
+                    </ul>
+                  </div>
+
+                     <div class="chart1 number_of">
+                    <ul>
+                      <li>12,000</li>
+                      <li>12,000</li>
+                      <li>12,000</li>
+                      <li>12,000</li>
+                        <li>12,000</li>
+                      <li>12,000</li>
+                    </ul>
+                  </div> -->
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

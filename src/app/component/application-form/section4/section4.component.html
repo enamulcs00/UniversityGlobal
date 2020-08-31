@@ -1,0 +1,196 @@
+<section>
+    <div class="container1440 mt-5">
+        <h5 class="application_pro">Application Form</h5>
+         <div class="application-form mt-5">
+            <form [formGroup]="section4Form">
+                  <div class="academic">
+                      <h5 class="application_pro">Academic Qualifications</h5>
+                      <div formArrayName='qualificationArr' *ngFor="let data of section4Form.get('qualificationArr')['controls']; let i = index">
+                          <div [formGroupName]="i">
+                              <div class="University-name cs3 mb-3">
+                                  <label>Country of Study :</label>
+                                  <select class="form-control" formControlName="country" (change)= "getAcedemicQulification($event.target.value,i)"
+                                  [ngClass]="{ 'is-invalid': submitted && data.controls['country'].hasError('required') }" >
+                                    <option disabled selected value=""> Select county</option>
+                                    <option *ngFor="let item of countryList" value="{{item.country}}">{{item.country}}</option>
+                                  </select>
+                                  <i class="fa fa-sort-down"></i>
+                                  <div *ngIf="submitted && data.controls['country'].hasError('required')" >
+                                    <div *ngIf="data.controls['country'].hasError('required')" class="danger">
+                                        *please enter the country
+                                    </div>
+                                  </div>
+                              </div>
+
+                              <div class="University-name cs3 mb-3">
+                                  <label>Academic Qualifications :</label>
+                                  <select class="form-control" formControlName="qualification"  
+                                  [ngClass]="{ 'is-invalid': submitted && data.controls['qualification'].hasError('required') }" >
+                                    <option selected disabled value="">Select qualification</option>  
+                                    <option *ngFor="let item of academicQualifiationList[i]" value="{{item.qualification}}">{{item.qualification}}</option>
+                                  </select>
+                                  <i class="fa fa-sort-down"></i>
+                                  <div *ngIf="submitted && data.controls['qualification'].hasError('required')" >
+                                    <div *ngIf="data.controls['qualification'].hasError('required')" class="danger">
+                                        *please enter the qualification
+                                    </div>
+                                  </div>
+                              </div>
+
+                              <div class="University-name cs3 mb-3">
+                                <label for="exampleInputEmail1">Result / Overall Grade :</label>
+                                <select class="form-control" formControlName="resultGrade"   (change)="changeResult($event)"
+                                [ngClass]="{ 'is-invalid': submitted && data.controls['resultGrade'].hasError('required') }" >
+                                  <option selected disabled value="">Select </option>  
+                                  <option *ngFor="let item of resultTypeList" value="{{item.resultName}}">{{item.resultName}}</option>
+                                </select>
+                                <i class="fa fa-sort-down"></i>
+                                <div *ngIf="submitted && data.controls['resultGrade'].hasError('required')" >
+                                  <div *ngIf="data.controls['resultGrade'].hasError('required')" class="danger">
+                                      *please enter the resultGrade
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="University-name cs3 mb-3">
+                                <label for="exampleInputEmail1">Subject 1 :</label>
+                                <select class="form-control" formControlName="subject1"  
+                                [ngClass]="{ 'is-invalid': submitted && data.controls['subject1'].hasError('required') }" >
+                                  <option selected disabled value="">Select subject</option>  
+                                  <option *ngFor="let item of SubjectTypeList" value="{{item.subjectName}}">{{item.subjectName}}</option>
+                                </select>
+                                <i class="fa fa-sort-down"></i>
+                                <div *ngIf="submitted && data.controls['subject1'].hasError('required')" >
+                                  <div *ngIf="data.controls['subject1'].hasError('required')" class="danger">
+                                      *please enter the subject1
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="form-group">
+                                <label for="exampleInputEmail1">Subject 1- Grade :</label>
+                                <input type="{{resultType}}" class="form-control" placeholder="Subject 1- Grade" formControlName="subject1Grade"
+                                [ngClass]="{ 'is-invalid': submitted && data.controls['subject1Grade'].hasError('required') }" >
+                                <div *ngIf="submitted && data.controls['subject1Grade'].hasError('required')" >
+                                  <div *ngIf="data.controls['subject1Grade'].hasError('required')" class="danger">
+                                      *please enter the subject1Grade
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="University-name cs3 mb-3">
+                                <label for="exampleInputEmail1">Subject 2 :</label>
+                                <select class="form-control" formControlName="subject2"  
+                                [ngClass]="{ 'is-invalid': submitted && data.controls['subject2'].hasError('required') }" >
+                                  <option selected disabled value="">Select subject</option>  
+                                  <option *ngFor="let item of SubjectTypeList" value="{{item.subjectName}}">{{item.subjectName}}</option>
+                                </select>
+                                <i class="fa fa-sort-down"></i>
+                                <div *ngIf="submitted && data.controls['subject2'].hasError('required')" >
+                                  <div *ngIf="data.controls['subject2'].hasError('required')" class="danger">
+                                      *please enter the subject2
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="form-group">
+                                <label for="exampleInputEmail1">Subject 2- Grade :</label>
+                                <input type="{{resultType}}" class="form-control" placeholder="Subject 2- Grade" formControlName="subject2Grade"
+                                [ngClass]="{ 'is-invalid': submitted && data.controls['subject2Grade'].hasError('required') }" >
+                                <div *ngIf="submitted && data.controls['subject2Grade'].hasError('required')" >
+                                  <div *ngIf="data.controls['subject2Grade'].hasError('required')" class="danger">
+                                      *please enter the subject2Grade
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="form-group">
+                                <label for="exampleInputEmail1">Institution Name :</label>
+                                <input type="email" class="form-control"  formControlName="institutionName"
+                                [ngClass]="{ 'is-invalid': submitted && data.controls['institutionName'].hasError('required') }" >
+                                <div *ngIf="submitted && data.controls['institutionName'].hasError('required')" >
+                                  <div *ngIf="data.controls['institutionName'].hasError('required')" class="danger">
+                                      *please enter the institutionName
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="form-group">
+                                <label for="exampleInputEmail1">Start Date :</label>
+                                <input type="date" class="form-control" placeholder="DD/MM/YY" formControlName="startDate"
+                                [ngClass]="{ 'is-invalid': submitted && data.controls['startDate'].hasError('required') }" >
+                                <div *ngIf="submitted && data.controls['startDate'].hasError('required')" >
+                                  <div *ngIf="data.controls['startDate'].hasError('required')" class="danger">
+                                      *please enter the startDate
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="form-group">
+                                  <label for="exampleInputEmail1">End Date :</label>
+                                  <input type="date" class="form-control" placeholder="DD/MM/YY"  formControlName="endDate"
+                                  [ngClass]="{ 'is-invalid': submitted && data.controls['endDate'].hasError('required') }" >
+                                  <div *ngIf="submitted && data.controls['endDate'].hasError('required')" >
+                                    <div *ngIf="data.controls['endDate'].hasError('required')" class="danger">
+                                        *please enter the endDate
+                                    </div>
+                                  </div>
+                              </div>   
+                              <div class="add_date router-link" (click)="remove(i)" *ngIf="i != 0">
+                                <div style="position: absolute;right: 0px;">
+                                  <i class="fa fa-minus" aria-hidden="true"></i>&nbsp; Remove
+                                </div>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="add_date router-link" (click)="addQualification()">
+                        <i class="fa fa-plus" aria-hidden="true"></i> Add aditional qualification
+                      </div>
+                    
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Please State Highest Academic Qualification</label>
+                        <input type="email" class="form-control" placeholder="" formControlName="stateHighestQualification"
+                        [ngClass]="{ 'is-invalid': submitted && section4Form.get('stateHighestQualification').hasError('required') }">  
+                          <div *ngIf="submitted && section4Form.get('stateHighestQualification').hasError" >
+                            <div *ngIf="section4Form.get('stateHighestQualification').hasError('required')" class="danger">
+                                *please enter the state Highest Qualification
+                            </div>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <label for="exampleInputEmail1">Achieved :</label>
+                          <input type="email" class="form-control" formControlName="achieved"
+                          [ngClass]="{ 'is-invalid': submitted && section4Form.get('achieved').hasError('required') }">  
+                          <div *ngIf="submitted && section4Form.get('achieved').hasError" >
+                            <div *ngIf="section4Form.get('achieved').hasError('required')" class="danger">
+                                *please enter the state Highest Qualification
+                            </div>
+                          </div>
+                      </div>
+                  </div>   
+            </form>
+            <div class="cntact-button back">
+                <button class="theme-btn router-link" [routerLink]="['/section3']">Back</button>
+                <button class="theme-btn active router-link" (click)="continue()">Continue</button>
+                <button class="theme-btn router-link" (click)="saveAndQuit()">Save and Quit</button>
+            </div>
+     </div>         
+   </div>
+</section>
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+      <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">&nbsp;</h5>
+      </div>
+      <div class="modal-body">
+          Congratulations your form has been submitted successfully!You will get the email notification of each status of your form.
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="theme-btn router-link  okay" data-dismiss="modal" [routerLink]="['/dashboard']">OK</button>
+      </div>
+      </div>
+  </div>
+</div>

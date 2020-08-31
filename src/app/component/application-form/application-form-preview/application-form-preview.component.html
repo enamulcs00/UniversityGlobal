@@ -1,0 +1,156 @@
+
+<div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content cs3">
+        <div class="modal-body ">
+            <div class="continue">
+                <h2>Preview</h2>
+
+                <p>Once you continue with the application you will be asked to complete the application
+                  form : all field marked with an asterisk must be completed .</p>
+
+                  <h6>Postgraduate application form</h6>
+            </div>
+
+          <p class="which">The course to which you are currently applying is :</p>
+
+          <div class="the_course">
+              <div class="course_type">
+                  <ul>
+                      <li>Course Name :</li>
+                      <li>Duration :</li>
+                      <li>Entry year :</li>
+                      <li>Logged by :</li>
+                  </ul>
+              </div>
+
+              <div class="course_type">
+                  <ul>
+                      <li>{{section1.searchCourse}}</li>
+                      <li>{{section1.courseDuration}}</li>
+                      <li>{{section1.startYear}}</li>
+                      <li>Global questionary areas</li>
+                  </ul>
+              </div>
+          </div>
+
+          <div class="question_aras">
+              <h2>Question aras</h2>
+              <p>Please complete each of the following question areas by clicking "Edit" A green
+                tick will appear next to the section when you have entered required information.
+                Required information will be labelled with *(asterisk).</p>
+          </div>         
+
+          <div class="edit_datails mt-4">
+              <h4> Course applied for</h4>
+              <div class="edit">
+                  <button class="button active router-link" [routerLink]="['/section1']">Edit</button>
+              </div>
+          </div>
+
+          <div class="edit_datails mt-4">
+              <h4>Personal Details</h4>
+              <div class="edit">
+                  <button class="button active router-link" [routerLink]="['/section2']">Edit</button>
+              </div>
+          </div>
+
+          <div class="edit_datails mt-4">
+              <h4>Address</h4>
+              <div class="edit">
+                  <button class="button active router-link" [routerLink]="['/section3']">Edit</button>
+              </div>
+          </div>
+
+          <div class="edit_datails mt-4">
+              <h4>Academic Qualifications</h4>
+              <div class="edit">
+                  <button class="button active router-link" [routerLink]="['/section4']">Edit</button>
+              </div>
+          </div>
+
+          <div class="edit_datails mt-4">
+              <h4>Professional qualifications</h4>
+              <div class="edit">
+                  <button class="button active router-link" [routerLink]="['/section5']">Edit</button>
+              </div>
+          </div>
+
+          <div class="edit_datails mt-4">
+              <h4>References </h4>
+              <div class="edit">
+                  <button class="button active router-link" [routerLink]="['/section6']">Edit</button>
+              </div>
+          </div>
+
+          <div class="edit_datails mt-4">
+              <h4>English Language</h4>
+              <div class="edit">
+                  <button class="button active router-link" [routerLink]="['/section7']">Edit</button>
+              </div>
+          </div>
+
+          <div class="edit_datails mt-4">
+              <h4>Personal Statement</h4>
+              <div class="edit">
+                  <button class="button active router-link" [routerLink]="['/section8']">Edit</button>
+              </div>
+          </div>
+
+          <div class="edit_datails mt-4">
+              <h4>Scholarships</h4>
+              <div class="edit">
+                  <button class="button active router-link" [routerLink]="['/section9']">Edit</button>
+              </div>
+          </div>
+
+          <div class="edit_datails mt-4">
+              <h4>Research Proposal</h4>
+              <div class="edit">
+                  <button class="button active router-link" [routerLink]="['/section10']">Edit</button>
+              </div>
+          </div>
+
+          <div class="edit_datails mt-4">
+              <h4>Employment for PGT programmes</h4>
+              <div class="edit">
+                  <button class="button active router-link" [routerLink]="['/section11']">Edit</button>
+              </div>
+          </div>
+
+          <!-- <div class="edit_datails mt-4">
+              <h4>Employment for MBA</h4>
+              <div class="edit">
+                  <button class="button active router-link" [routerLink]="['/section12']">Edit</button>
+              </div>
+          </div> -->
+
+          <div class="edit_datails mt-4">
+              <h4>Document upload section</h4>
+              <div class="edit">
+                  <button class="button active router-link" [routerLink]="['/section12']">Edit</button>
+              </div>
+          </div>
+
+          <div class="edit_datails mt-4" *ngIf="mbaExist && !executiveMbaExist">
+              <h4>Additional Section - Full-time MBA</h4>
+              <div class="edit">
+                  <button class="button active router-link" [routerLink]="['/section13']">Edit</button>
+              </div>
+          </div>
+
+          <div class="edit_datails mt-4" *ngIf="executiveMbaExist">
+              <h4>Additional Section - Executive MBA</h4>
+              <div class="edit">
+                  <button class="button active router-link" [routerLink]="['/section14']">Edit</button>
+              </div>
+          </div>
+
+
+          <div class="cntact-button back">
+              <button class="theme-btn router-link " (click)="back()">Back</button>
+              <button class="theme-btn router-link active" [routerLink]="['/matching-universities']">See Matching
+                Universities</button>
+          </div>
+        </div>
+    </div>
+</div>

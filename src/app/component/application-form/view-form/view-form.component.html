@@ -1,0 +1,394 @@
+<section>
+    <div class="container1440 mt-5">
+        <h4 class="manage">View Form</h4>
+        <div class="conta border-layer">
+            <div class="can-send no-pd ">
+                <button type="button" class="btn btn-button send down-load router-link"  (click)="exportPDF()"><i
+                        class="fa fa-arrow-down ar-row" aria-hidden="true" ></i>Download PDF</button>
+                <button type="button" class="btn btn-button send down-load router-link"><i
+                        class="fa fa-arrow-down ar-row" aria-hidden="true"></i>Download CSV</button>
+                <button type="button" class="btn btn-button send down-load router-link"
+                    [routerLink]="['/dashboard']">Back</button>
+            </div>
+        </div>
+        <div id = "pdfcontent">
+                <div class="upload-info more-content">
+                    <p class="up-load head-ings">Course Applied for</p>
+                    <ul class="personal-det-info">
+                        <li>Course Name :</li>
+                        <li>{{formData?.courseName}}</li>
+                        <li>Start Year :</li>
+                        <li>{{formData?.courseSttartDate ? formData?.courseSttartDate.split('-')[0] : ''}}</li>
+                        <li>Start Month :</li>
+                        <li>{{formData?.courseSttartDate ? formData?.courseSttartDate.split('-')[1] : ''}}</li>
+                    </ul>
+                </div>
+                <div class="upload-info more-content">
+                    <p class="up-load head-ings">Personal Details</p>
+                    <ul class="personal-det-info">
+                        <li>Title :</li>
+                        <li>{{formData?.title}}</li>
+                        <li>Sur Name(Family Name) :</li>
+                        <li>{{formData?.sirName}}</li>
+                        <li>Fore Name :</li>
+                        <li>{{formData?.forname}}</li>
+                        <li>Preferred Name :</li>
+                        <li>{{formData?.preferredName}}</li>
+                        <li>Select Gender :</li>
+                        <li>{{formData?.gender}}</li>
+                        <li>Email ID :</li>
+                        <li>{{formData?.email}}</li>
+                        <li>Confirm E-mail ID :</li>
+                        <li>{{formData?.email}}</li>
+                        <li>Country of Permanent Residence :</li>
+                        <li>{{formData?.permanentResidenceCountry}}</li>
+                        <li>Date of Birth :</li>
+                        <li>{{formData?.dob}}</li>
+                        <li>Country of Birth :</li>
+                        <li>{{formData?.countryOfBirth}}</li>
+                        <li>Passport Number :</li>
+                        <li>{{formData?.passportNumber}}</li>
+                        <li>Do yo require a visa to study in the UK :</li>
+                        <li>{{formData?.doUoyRequireVisatoStudtInTheUk }}</li>
+                        <li>Ethnicity (UK / EU Only) :</li>
+                        <li>{{formData?.ethenticity}}</li>
+                        <li>Disability :</li>
+                        <li>{{formData?.disability}}</li>
+                        <li>Description :</li>
+                        <li>{{formData?.description}}</li>
+                        <li>Relevant Criminal Convictions :</li>
+                        <li>{{formData?.relevantCriminalConvictions}}</li>
+                        <li>Description :</li>
+                        <li>{{formData?.criminalDescription}}</li>
+                    </ul>
+                </div>       
+                <div class="upload-info more-content">
+                    <p class="up-load head-ings">Address</p>
+                    <ul class="personal-det-info">
+                        <li>Select Country :</li>
+                        <li>{{formData?.country}}</li>
+                        <li>Select State :</li>
+                        <li>{{formData?.state}}</li>
+                        <li>Address :</li>
+                        <li>{{formData?.address}}</li>
+                        <li>ZipCode :</li>
+                        <li>{{formData?.zipcode}}</li>
+                        <li>Contact Telephone Number :</li>
+                        <li>{{formData?.telephoneNo}}</li>
+                        <li>Contact Phone Number :</li>
+                        <li>{{formData?.telephoneNo}}</li>
+                        <li>Contact Email Address :</li>
+                        <li>{{formData?.contactEmail}}</li>
+                    </ul>
+                    <p class="up-load">Home Address</p>
+                    <ul class="personal-det-info">
+                        <li>Home Address :</li>
+                        <li>{{formData?.homeAddress}}</li>
+                        <li>Home Telephone Number 1 :</li>
+                        <li>{{formData?.homeTeliphoneNo}}</li>
+                        <li>Home Telephone Number 2 :</li>
+                        <li>{{formData?.homeTeliphoneNo2}}</li>
+                        <li>Home Email Address :</li>
+                        <li>{{formData?.homeEmail}}</li>
+                    </ul>
+                </div>
+                <div class="upload-info more-content">
+                    <p class="up-load head-ings">Academic Qualifications</p>
+                    <ul class="personal-det-info">
+                        <li>Academic Qualifications :</li>
+                        <li>{{formData?.academicQualificationForm.academicQualifications}}</li>
+                        <li>Subject :</li>
+                        <li>{{formData?.academicQualificationForm.subject1}}</li>
+                        <li>Result / Overall Grade :</li>
+                        <li>{{formData?.academicQualificationForm.subject1grade1}}&nbsp;&nbsp;{{formData?.academicQualificationForm.resultType}}</li>
+                        <li>Institution Name :</li>
+                        <li>{{formData?.academicQualificationForm.instituteName}}</li>
+                        <li>Country of Study :</li>
+                        <li>{{formData?.academicQualificationForm.countryOfStudy}}</li>
+                        <li>Start Date :</li>
+                        <li>{{formData?.academicQualificationForm.startDate ? formData?.academicQualificationForm.startDate.split('T')[0] : ''}}</li>
+                        <li>End Date :</li>
+                        <li>{{formData?.academicQualificationForm.enddate ? formData?.academicQualificationForm.enddate.split('T')[0] : ''}}</li>
+                        <li>Please State Highest Academic Qualification :</li>
+                        <li>{{formData?.academicQualificationForm.highestAcademicQualification}}</li>
+                        <li>Achieved :</li>
+                        <li>{{formData?.academicQualificationForm.achieved}}</li>
+                    </ul>
+                </div>
+                <div class="upload-info more-content">
+                    <p class="up-load head-ings color-heading">Professional Qualifications</p>
+                    <p class="up-load-acd">Academic Qualifiaction</p>
+                    <ul class="personal-det-info">
+                        <li>Qualifications Title :</li>
+                        <li>{{formData?.qualificationTitle}}</li>
+                        <li>Subject :</li>
+                        <li>{{formData?.professionalQualificationSubject}}</li>
+                        <li>Date Awarded :</li>
+                        <li>{{formData?.awardedDate}}</li>
+                        <li>Professional Body Membership :</li>
+                        <li>{{formData?.professionalBodyMembership}}</li>
+                    </ul>
+                </div>
+                <div class="upload-info more-content ref1">
+                    <p class="up-load head-ings color-heading">References</p>
+                    <ul class="personal-det-info margin-bott">
+                        <li>Referee 1 Name :</li>
+                        <li>{{formData?.referee1Name}}</li>
+                        <li>Referee 1 Title :</li>
+                        <li>{{formData?.referee1Title}}</li>
+                        <li>Referee 1 Address :</li>
+                        <li>{{formData?.referee1Address}}</li>
+                        <li>Referee 1 Telephone Number :</li>
+                        <li>{{formData?.referee1TelephoneNumber}}</li>
+                        <li>Referee 1 Email Address :</li>
+                        <li>{{formData?.referee1Email}}</li>
+                    </ul>
+                    <p class="desc-ription">Description :</p>
+                    <p class="body-txt">{{formData?.aboutReference1}}</p>
+                </div>
+                <div class="upload-info more-content ref">
+                    <ul class="personal-det-info margin-bott">
+                        <li>Referee 2 Name :</li>
+                        <li>{{formData?.referee2Name}}</li>
+                        <li>Referee 2 Title :</li>
+                        <li>{{formData?.referee2Title}}</li>
+                        <li>Referee 2 Address :</li>
+                        <li>{{formData?.referee2Address}}</li>
+                        <li>Referee 2 Telephone Number :</li>
+                        <li>{{formData?.referee2TelephoneNumber}}</li>
+                        <li>Referee 2 Email Address :</li>
+                        <li>{{formData?.referee2Email}}</li>
+                    </ul>
+                    <p class="desc-ription">Description :</p>
+                    <p class="body-txt">{{formData?.aboutReference2}}</p>
+                </div>
+                <div class="upload-info more-content">
+                    <p class="up-load head-ings">English Language</p>
+                    <ul class="personal-det-info">
+                        <li>Are you a native of an english speaking country ? :</li>
+                        <li>{{formData?.areUNativeOfEnglishSpeakingCountry}}</li>
+                        <li>If no, please provide details of your more recent
+                            English language test undertaken :</li>
+                        <li>{{formData?.ifNoThenAddAboutRecentEnglishLanguage}}</li>
+                        <li>Test name :</li>
+                        <li>{{formData?.ifNoThenAddAboutRecentEnglishLanguage}}</li>
+                        <li>Date test taken :</li>
+                        <li>12/09/2019</li>
+                        <li>Result :</li>
+                        <li>{{formData?.overallResultForEnglishQualification}}</li>
+                    </ul>
+                </div>
+                <div class="upload-info more-content">
+                    <p class="up-load head-ings">Personal Statement</p>
+                    <p class="desc-ription">Description :</p>
+                    <p class="body-txt">{{formData?.personalStatementDescription}}</p>
+                </div>
+                <div class="upload-info more-content">
+                    <p class="up-load head-ings">Scholarships</p>
+                    <p class="desc-ription">Do you currently have funding for your chosen programme of study?</p>
+                    <div class="custm-radio">
+                        <label class="custm-rdio">Yes
+                            <input type="radio" checked="{{formData?.doYouCurrentlyHaveFundingForYourChosenProgrammeofStudy ? formData?.doYouCurrentlyHaveFundingForYourChosenProgrammeofStudy : true}}" name="radio">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="custm-rdio">No
+                            <input type="radio" name="radio" checked="{{formData?.doYouCurrentlyHaveFundingForYourChosenProgrammeofStudy ? formData?.doYouCurrentlyHaveFundingForYourChosenProgrammeofStudy : true}}">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <p class="desc-ription">Are you intending to apply for external funding?</p>
+                    <div class="custm-radio">
+                        <label class="custm-rdio">Yes
+                            <input type="radio" checked="{{formData?.applyForExternalFunding ? formData?.applyForExternalFunding : true }}" name="radio1">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="custm-rdio">No
+                            <input type="radio" checked="{{formData?.applyForExternalFunding ? formData?.applyForExternalFunding : true }}" name="radio1">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <p class="desc-ription yes">If yes, what funding are you applying for?</p>
+                    <p class="desc-ription">Description :</p>
+                    <p class="body-txt">{{formData?.applyForExternalFundingDescription}}</p>
+                    <p class="desc-ription">Do you wish to apply for (be considered for) University funding?</p>
+                    <div class="custm-radio">
+                        <label class="custm-rdio">Yes
+                            <input type="radio" checked="{{formData?.wishtoApplyForUniversityFunding ? formData?.wishtoApplyForUniversityFunding : true}}" name="radio3">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="custm-rdio">No
+                            <input type="radio" checked="{{formData?.wishtoApplyForUniversityFunding ? formData?.wishtoApplyForUniversityFunding : true}}" name="radio3">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <p class="desc-ription yes">If yes, which (or what)?</p>
+                    <p class="desc-ription">Description :</p>
+                    <p class="body-txt">{{formData?.wishtoApplyForUniversityFundingDescription ? formData?.wishtoApplyForUniversityFundingDescription : true}}</p>
+                    <p class="desc-ription weigh-bld">Do you wish to be considered for University/ department scholarships/
+                        bursaries?</p>
+                    <div class="custm-radio">
+                        <label class="custm-rdio">Yes
+                            <input type="radio" checked="{{formData?.wishtoApplyForUniversityscholarship ? formData?.wishtoApplyForUniversityscholarship : true}}" name="radio4">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="custm-rdio">No
+                            <input type="radio" checked="{{formData?.wishtoApplyForUniversityscholarship ? formData?.wishtoApplyForUniversityscholarship : true}}" name="radio4">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <p class="desc-ription yes">If yes, which one?</p>
+                    <p class="desc-ription">Description :</p>
+                    <p class="body-txt">{{formData?.wishtoApplyForUniversityscholarshipDescription ? formData?.wishtoApplyForUniversityscholarshipDescription : true}}</p>
+                </div>
+                <div class="upload-info more-content">
+                    <p class="up-load head-ings">Research Proposal</p>
+                    <p class="desc-ription">Research proposal – for PGR ?</p>
+                    <div class="custm-radio">
+                        <label class="custm-rdio">Yes
+                            <input type="radio" checked="{{formData?.researchProposalForPGR}}" name="radio6">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="custm-rdio">No
+                            <input type="radio" checked="{{formData?.researchProposalForPGR}}" name="radio6">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <p class="desc-ription yes">Please supply a description of your proposed research topic :</p>
+                    <p class="desc-ription">Description :</p>
+                    <p class="body-txt">{{formData?.researchProposalDescription}}</p>
+
+
+                </div>
+                <div class="upload-info more-content">
+                    <p class="up-load head-ings">Employment for PGT programmes</p>
+                    <ul class="personal-det-info">
+                        <li>Job Title :</li>
+                        <li>{{formData?.pgtJobTitle}}</li>
+
+                        <li>Do you have work experience :</li>
+                        <li>{{formData?.totalWorkExperience}}</li>
+                        
+                        <li>Total number of years of full time work experience :</li>
+                        <li>{{formData?.totalWorkExperience}}</li>
+                        
+                        <li>Employers Name :</li>
+                        <li>{{formData?.employersName}} </li>
+                        
+                        <li>Nature of employers business :</li>
+                        <li>{{formData?.employersName}} </li>
+
+                        <li>Brief Duties :</li>
+                        <li>{{formData?.briefDuties}} </li>
+
+                        <li>Employed From :</li>
+                        <li>{{formData?.dateAppointed}} </li>
+
+                        <li>Gross Annual Salary (in USD) :</li>
+                        <li>{{formData?.grossAnnualSalary}}</li>
+
+                    </ul>
+                </div>
+                <div class="upload-info more-content">
+                    <p class="up-load head-ings">Download Section</p>
+                    <ul class="personal-det-info">
+                        <li>Dowload a Personal Statement :</li>                
+                        <li><a href="{{formData?.urlpersonalStatement}}" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a></li>
+                        <li>Downlaod a Research Proposal (for PGR only) :</li>
+                        <li>
+                            <a href="{{formData?.urlResearchProposal}}" target="_blank">                    
+                                <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>Downlaod CV :</li>
+                        <li>
+                            <a href="{{formData?.urlCv}}" target="_blank">                    
+                                <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>Download Transcript :</li>
+                        <li>
+                            <a href="{{formData?.urlTranscript}}" target="_blank">                    
+                                <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>Downlaod Degree Certificate :</li>
+                        <li>
+                            <a href="{{formData?.urlDegree}}" target="_blank">                    
+                                <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>Downlaod Copy of English Language Certificate :</li>
+                        <li>
+                            <a href="{{formData?.urlEnglishLanguageCertificate}}" target="_blank">                    
+                                <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>Downlaod Other Documents :</li>
+                        <li>
+                            <a href="{{formData?.urlDocuments}}" target="_blank">                    
+                                <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="upload-info more-content" *ngIf="mbaExist && !executiveMbaExist">
+                    <p class="up-load head-ings color-heading">Additional Section - Full-time MBA</p>
+                    <p class="up-load-acd">Additional requirements for MBA</p>
+                    <p class="desc-ription">How many years relevant full-time graduate work experience do you have?</p>
+                    <p class="desc-ription three-year cent-aline">{{formData?.graduateWorkExperience}} Years</p>
+                    <p class="desc-ription">How many years total work experience do you have?</p>
+                    <p class="desc-ription three-year cent-aline">{{formData?.totalWorkExperience}} Years</p>
+                    <p class="desc-ription">Have considerable autonomy and responsibility for self-management / motivation?</p>
+                    <p class="desc-ription three-year">{{formData?.requireSpecificTechnical}}</p>
+                    <p class="desc-ription">Require specific technical / expert knowledge which is at a level consistent with
+                        that
+                        expected of a university graduate.</p>
+                    <p class="desc-ription three-year">{{formData?.requireSpecificTechnical}}</p>
+                    <p class="desc-ription">Are expected to make original contributions or deploy creative talents.</p>
+                    <p class="desc-ription three-year cent-aline">Yes</p>
+                    <p class="desc-ription">Are responsible for managing specific projects, tasks or teams within an
+                        organisation.</p>
+                    <p class="desc-ription three-year">{{formData?.requireSpecificTechnical}}</p>
+                    <p class="desc-ription">Are expected to make original contributions or deploy creative talents.-</p>
+                    <p class="desc-ription three-year">{{formData?.requireSpecificTechnical}}</p>
+                    <p class="desc-ription">Are responsible for managing or working with budgets.</p>
+                    <p class="desc-ription three-year">{{formData?.requireSpecificTechnical}}</p>
+                    <p class="desc-ription">Can demonstrate evidence of career progression in terms of increased levels of
+                        managerial, technical or creative responsibility?</p>
+                    <p class="desc-ription three-year">{{formData?.requireSpecificTechnical}}</p>
+                </div>
+                <div class="upload-info more-content" *ngIf="executiveMbaExist">
+                    <p class="up-load head-ings color-heading">Additional Section - Executive MBA</p>
+                    <p class="up-load-acd">Additional requirements for Executive MBA</p>
+                    <p class="desc-ription">How many years relevant full-time managerial work experience do you have?</p>
+                    <p class="desc-ription three-year cent-aline">{{formData?.managementWorkExperience}} Years</p>
+                    <p class="desc-ription">How many years total work experience do you have?</p>
+                    <p class="desc-ription three-year cent-aline">{{formData?.totalWorkExperience}} Years</p>
+
+                    <p class="desc-ription">An involvement in strategic planning and decision-making that affects events beyond standard
+                                operational activities?</p>
+                    <p class="desc-ription three-year cent-aline">{{formData?.operationaActivities}}</p>
+
+                    <p class="desc-ription">A responsibility for co-ordinating the work of others in a team.</p>
+                    <p class="desc-ription three-year cent-aline">{{formData?.coOrdinatingTeam}}</p>
+
+                    <p class="desc-ription">A responsibility for meeting financial targets that rely on the efforts of more than one person.</p>
+                    <p class="desc-ription three-year cent-aline">{{formData?.meetingFinancial}}</p>
+
+                    <p class="desc-ription">A defined responsibility for improving the performance of people, processes or technology.</p>
+                    <p class="desc-ription three-year cent-aline">{{formData?.processesOrTechnology}}</p>
+
+                    <p class="desc-ription">A role that primarily achieves results through influencing others rather than through direct 
+                        authority.</p>
+                    <p class="desc-ription three-year cent-aline">{{formData?.primarilyAchieves}}</p>
+
+                    <p class="desc-ription">Experience of working internationally or of relevant multi-cultural exposure</p>
+                    <p class="desc-ription three-year cent-aline">{{formData?.multiCulturalAxposure}}</p>
+
+                </div>
+        </div>
+
+     
+
+    </div>
+</section>

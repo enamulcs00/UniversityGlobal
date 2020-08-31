@@ -1,0 +1,120 @@
+<section>
+    <div class="container1440 mt-5">
+        <h5 class="application_pro">Application Form</h5>
+        <div class="application-form mt-5">
+            <form [formGroup]="section14Form">
+                <div class="academic">
+                      <h5 class="application_pro cs3">Additional Section - Full-time MBA</h5>
+                      <p class="for_mba">Additional requirements for MBA</p>
+
+                      <div class="form-group mt-3">
+                          <label>How many years relevant full-time graduate work experience do you have?</label>
+                          <input type="number" class="form-control"  formControlName="graduateWorkExperience" 
+                          [ngClass]="{ 'is-invalid': submitted && section14Form.get('graduateWorkExperience').hasError('required') }" >
+                          <div *ngIf="submitted && section14Form.get('graduateWorkExperience').hasError" >
+                             <div *ngIf="section14Form.get('graduateWorkExperience').hasError('required')" class="danger">
+                                *please enter the graduateWorkExperience
+                             </div>
+                          </div>
+                      </div>
+
+                      <div class="form-group mt-3">
+                          <label>How many years total work experience do you have?</label>
+                          <input type="number" class="form-control"   formControlName="totalExperience" 
+                          [ngClass]="{ 'is-invalid': submitted && section14Form.get('totalExperience').hasError('required') }" >
+                          <div *ngIf="submitted && section14Form.get('totalExperience').hasError" >
+                             <div *ngIf="section14Form.get('totalExperience').hasError('required')" class="danger">
+                                *please enter the totalExperience
+                             </div>
+                          </div>
+                      </div>
+
+                      <div class="form-group mt-3">
+                          <label>Have considerable autonomy and responsibility for self-management /motivation?</label>
+                          <input type="text" class="form-control"  formControlName="autonomyAndResponsibility" 
+                          [ngClass]="{ 'is-invalid': submitted && section14Form.get('autonomyAndResponsibility').hasError('required') }" >
+                          <div *ngIf="submitted && section14Form.get('autonomyAndResponsibility').hasError" >
+                             <div *ngIf="section14Form.get('autonomyAndResponsibility').hasError('required')" class="danger">
+                                *please enter the autonomyAndResponsibility
+                             </div>
+                          </div>
+                      </div>
+
+                      <div class="form-group mt-3">
+                          <label>Require specific technical / expert knowledge which is at a level consistent with that expected of a
+                            university graduate.</label>
+                          <input type="text" class="form-control" formControlName="technicalExpertKnowledge" 
+                          [ngClass]="{ 'is-invalid': submitted && section14Form.get('technicalExpertKnowledge').hasError('required') }" >
+                          <div *ngIf="submitted && section14Form.get('technicalExpertKnowledge').hasError" >
+                             <div *ngIf="section14Form.get('technicalExpertKnowledge').hasError('required')" class="danger">
+                                *please enter the technicalExpertKnowledge
+                             </div>
+                          </div>
+                      </div>
+
+                      <div class="form-group mt-3">
+                          <label>Are expected to make original contributions or deploy creative talents.</label>
+                          <input type="text" class="form-control" formControlName="contributions" 
+                          [ngClass]="{ 'is-invalid': submitted && section14Form.get('contributions').hasError('required') }" >
+                          <div *ngIf="submitted && section14Form.get('contributions').hasError" >
+                              <div *ngIf="section14Form.get('contributions').hasError('required')" class="danger">
+                                    *please enter the contributions
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="form-group mt-3">
+                          <label>Are expected to input into key decision-making processes.</label>
+                          <input type="text" class="form-control" formControlName="keyDecision" 
+                          [ngClass]="{ 'is-invalid': submitted && section14Form.get('keyDecision').hasError('required') }" >
+                          <div *ngIf="submitted && section14Form.get('keyDecision').hasError" >
+                             <div *ngIf="section14Form.get('keyDecision').hasError('required')" class="danger">
+                                *please enter the keyDecision
+                             </div>
+                          </div>
+                      </div>                     
+                      
+                      <div class="form-group mt-3">
+                          <label>Are responsible for managing specific projects, tasks or teams within an organisation.</label>
+                          <input type="text" class="form-control" formControlName="managingProjects" 
+                          [ngClass]="{ 'is-invalid': submitted && section14Form.get('managingProjects').hasError('required') }" >
+                          <div *ngIf="submitted && section14Form.get('managingProjects').hasError" >
+                              <div *ngIf="section14Form.get('managingProjects').hasError('required')" class="danger">
+                                  *please enter the managingProjects
+                              </div>
+                          </div>
+                      </div>
+
+
+                      <div class="form-group ">
+                          <label>Are responsible for managing or working with budgets.</label>
+                          <input type="text" class="form-control" formControlName="managingBudget" 
+                          [ngClass]="{ 'is-invalid': submitted && section14Form.get('managingBudget').hasError('required') }" >
+                          <div *ngIf="submitted && section14Form.get('managingBudget').hasError" >
+                              <div *ngIf="section14Form.get('managingBudget').hasError('required')" class="danger">
+                                  *please enter the managingBudget
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="form-group mt-3">
+                          <label>Can demonstrate evidence of career progression in terms of increased levels of managerial, technical or
+                            creative responsibility?</label>
+                          <input type="text" class="form-control"  formControlName="evidenceOfCarrerProgession" 
+                          [ngClass]="{ 'is-invalid': submitted && section14Form.get('evidenceOfCarrerProgession').hasError('required') }" >
+                          <div *ngIf="submitted && section14Form.get('evidenceOfCarrerProgession').hasError" >
+                              <div *ngIf="section14Form.get('evidenceOfCarrerProgession').hasError('required')" class="danger">
+                                  *please enter the evidenceOfCarrerProgession
+                              </div>
+                          </div>
+                      </div>
+
+                </div>
+                <div class="cntact-button back" >
+                    <button class="theme-btn router-link" [routerLink]="['/section12']">Back</button>
+                    <button class="theme-btn router-link active" (click)="continue()">Preview</button>
+               </div>
+            </form>
+        </div>
+    </div>
+</section>

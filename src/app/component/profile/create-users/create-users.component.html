@@ -1,0 +1,249 @@
+<section>
+
+
+  <div class="container1440 mt-5">
+    <div class="subscribe">
+      <div class="left_section">
+        <div class="pick_cs">
+          <a><img src="{{accountData.imageUrl}}">
+          </a>
+          <p>{{accountData.firstName}}</p>
+        </div>
+
+        <div class="changs">
+          <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <a class="nav-link  general_cs" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
+              aria-controls="v-pills-home" aria-selected="true" [routerLink]="['/my-profile']">
+              Manage General Info</a>
+            <a class="nav-link general_cs" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile"
+              role="tab" aria-controls="v-pills-profile" aria-selected="false"
+              [routerLink]="['/change-password']">
+              Change Password
+            </a>
+            <a class="nav-link  general_cs" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages"
+              role="tab" aria-controls="v-pills-messages" aria-selected="false" [routerLink]="['/my-subscription']" *ngIf="accountData?.role != 'REPRESENTATIVE_USER'">
+              My Subscription</a>
+            <a class="nav-link general_cs" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings"
+              role="tab" aria-controls="v-pills-settings" aria-selected="false"
+              [routerLink]="['/subscription-history']" >
+              Subscription History
+            </a>
+            <a class="nav-link general_cs" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings1"
+              role="tab" aria-controls="v-pills-settings" aria-selected="false" [routerLink]="['/manage-users']"*ngIf="accountData?.role != 'REPRESENTATIVE_USER'">
+              Manage Users</a>
+            <a class="nav-link active general_cs" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings2"
+              role="tab" aria-controls="v-pills-settings" aria-selected="false" [routerLink]="['/create-users']"*ngIf="accountData?.role != 'REPRESENTATIVE_USER'">
+              Create User
+            </a>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="right-section">
+        <h4 class="manage">Manage General Info</h4>
+        <div class="tab-content" id="v-pills-tabContent">
+          <div class="tab-pane fade show active" id="v-pills-settings2" role="tabpanel"
+            aria-labelledby="v-pills-settings-tab">
+            <div class="general-info">
+              <div class="info-box">
+
+                <div class="form_section">
+                  <form [formGroup]="createUserForm">
+
+                    <div class="form-group cs3">
+                      <label for="exampleInputEmail1">First Name *</label>
+                      <input type="email" class="form-control" placeholder="First Name " formControlName="firstName">
+                      <div *ngIf="submitted && createUserForm.get('firstName').hasError">
+                        <div *ngIf="createUserForm.get('firstName').hasError('required')" class="danger">
+                          *please enter the firstName
+                        </div>
+                        <div *ngIf="createUserForm.get('firstName').hasError('pattern')" class="danger">
+                          *please enter the firstName
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group cs3">
+                      <label for="exampleInputEmail1">Last Name *</label>
+                      <input type="email" class="form-control" placeholder="Last Name" formControlName="lastName">
+                      <div *ngIf="submitted && createUserForm.get('lastName').hasError">
+                        <div *ngIf="createUserForm.get('lastName').hasError('required')" class="danger">
+                          *please enter the lastName
+                        </div>
+                        <div *ngIf="createUserForm.get('lastName').hasError('pattern')" class="danger">
+                          *please enter the lastName
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group cs3">
+                      <label for="exampleInputEmail1" style="margin-right:47%;">Telephone Number *</label>
+                      <ngx-intl-tel-input [inputId]="'adsasd2'" [cssClass]="'custom form-control'"
+                        [preferredCountries]="preferredCountries" [enableAutoCountrySelect]="false"
+                        [enablePlaceholder]="true" [searchCountryFlag]="true"
+                        [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]"
+                        [selectFirstCountry]="false" [selectedCountryISO]="CountryISO.India" [maxLength]="13"
+                        [tooltipField]="TooltipLabel.Name" [phoneValidation]="true"
+                        [separateDialCode]="separateDialCode" name="phone" (keyup)="homeTelephoneValidOrNot()"
+                        formControlName="telephoneNumber">
+                      </ngx-intl-tel-input>
+                      <span>
+                        <p *ngIf="submitted && createUserForm.get('telephoneNumber').hasError('required')"
+                          class="danger">
+                          *please enter the contact number
+                        </p>
+                        <p *ngIf="!validHomeTelephoneNo" class="danger">
+                          *please enter the valid Phone Number
+                        </p>
+                      </span>
+                    </div>
+
+                    <div class="form-group cs3">
+                      <label for="exampleInputEmail1" style="margin-right: 39%;">Mobile / Cell Phone Number *</label>
+                      <ngx-intl-tel-input [inputId]="'adsasd2'" [cssClass]="'custom form-control'"
+                        [preferredCountries]="preferredCountries" [enableAutoCountrySelect]="false"
+                        [enablePlaceholder]="true" [searchCountryFlag]="true"
+                        [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]"
+                        [selectFirstCountry]="false" [selectedCountryISO]="CountryISO.India" [maxLength]="13"
+                        [tooltipField]="TooltipLabel.Name" [phoneValidation]="true"
+                        [separateDialCode]="separateDialCode" name="phone" (keyup)="contactValidOrNot()"
+                        formControlName="mobileNumber">
+                      </ngx-intl-tel-input>
+                      <span>
+                        <p *ngIf="submitted && createUserForm.get('mobileNumber').hasError('required')" class="danger">
+                          *please enter the contact number
+                        </p>
+                        <p *ngIf="!validmobileNumber" class="danger">
+                          *please enter the valid Phone Number
+                        </p>
+                      </span>
+                    </div>
+
+                    <div class="form-group cs3">
+                      <label for="exampleInputEmail1">Name of the company
+                        *</label>
+                      <input type="email" class="form-control" placeholder="business Name" formControlName="businessName" disabled>
+                      <div *ngIf="submitted && createUserForm.get('businessName').hasError">
+                        <div *ngIf="createUserForm.get('businessName').hasError('required')" class="danger">
+                          *please enter the businessName
+                        </div>
+                        <div *ngIf="createUserForm.get('businessName').hasError('pattern')" class="danger">
+                          *please enter the valid businessName
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group cs3">
+                      <label for="exampleInputEmail1">Email*</label>
+                      <input type="email" class="form-control" placeholder="pq-mahesh@gmail.com"
+                        formControlName="email">
+                      <div *ngIf="submitted && createUserForm.get('email').hasError">
+                        <div *ngIf="createUserForm.get('email').hasError('required')" class="danger">
+                          *please enter the email
+                        </div>
+                        <div *ngIf="createUserForm.get('email').hasError('pattern')" class="danger">
+                          *please enter the valid email
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group cs3">
+                      <label for="exampleInputEmail1">Address Line 1*</label>
+                      <input type="email" class="form-control" placeholder="Okhla phase" formControlName="address1">
+                      <div *ngIf="submitted && createUserForm.get('address1').hasError">
+                        <div *ngIf="createUserForm.get('address1').hasError('required')" class="danger">
+                          *please enter the address1
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group cs3">
+                      <label for="exampleInputEmail1">Address Line 2*</label>
+                      <input type="email" class="form-control" placeholder="Okhla phase" formControlName="address2">
+                      <div *ngIf="submitted && createUserForm.get('address2').hasError">
+                        <div *ngIf="createUserForm.get('address2').hasError('required')" class="danger">
+                          *please enter the address2
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group cs3">
+                      <label for="exampleInputEmail1">Address Line 3</label>
+                      <input type="email" class="form-control" placeholder="Okhla phase" formControlName="address3">
+                      <div *ngIf="submitted && createUserForm.get('address3').hasError">
+                        <div *ngIf="createUserForm.get('address3').hasError('required')" class="danger">
+                          *please enter the address3
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group cs3">
+                      <label for="exampleInputEmail1">Post Code/Pin Code/Zip Code* </label>
+                      <input type="email" class="form-control" placeholder="766015" formControlName="zipCode">
+                      <div *ngIf="submitted && createUserForm.get('zipCode').hasError">
+                        <div *ngIf="createUserForm.get('zipCode').hasError('required')" class="danger">
+                          *please enter the zipCode
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group cs3">
+                      <label for="exampleInputEmail1">City *</label>
+                      <input type="email" class="form-control" placeholder="London" formControlName="city">
+                      <div *ngIf="submitted && createUserForm.get('city').hasError">
+                        <div *ngIf="createUserForm.get('city').hasError('required')" class="danger">
+                          *please enter the city
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group cs3">
+                      <label for="exampleInputEmail1">Country *</label>
+                      <ul class="tele_cs">
+                        <li class="drop">
+                          <select class="form-control" formControlName="country" (change)="getState($event)">
+                            <option disabled selected value="">Select country</option>
+                            <option *ngFor="let item of countryList" value="{{item.country}}">{{item.country}}</option>
+                          </select>
+                        </li>
+                      </ul>
+                      <div *ngIf="submitted && createUserForm.get('country').hasError">
+                        <div *ngIf="createUserForm.get('country').hasError('required')" class="danger">
+                          *please enter the country
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="form-group cs3">
+                      <label for="exampleInputEmail1">State*</label>
+                      <ul class="tele_cs">
+                        <li class="drop">
+                          <select class="form-control" formControlName="state">
+                            <option selected disabled value="">Select state</option>
+                            <option *ngFor="let item of stateList" value="{{item}}">{{item}}</option>
+                          </select>
+                        </li>
+                      </ul>
+                      <div *ngIf="submitted && createUserForm.get('state').hasError">
+                        <div *ngIf="createUserForm.get('state').hasError('required')" class="danger">
+                          *please enter the state
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="cntact-button">
+                      <button class="theme-btn" [routerLink]="['/dashboard']">Cancel</button>
+                      <button class="theme-btn" (click)="createUser()">Save</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

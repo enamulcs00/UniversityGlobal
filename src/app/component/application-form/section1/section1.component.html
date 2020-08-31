@@ -1,0 +1,317 @@
+<section>
+    <div class="container1440 mt-5">
+        <h5 class="application_pro">Application Form</h5>
+        <div class="application_cs mt-5">
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-new_create" role="tabpanel" aria-labelledby="pills-contact-tab">
+                    <div class="personal-details mt-5">
+                        <form [formGroup]="section1Form">
+                            <div class="details">
+                              <h2>Personal Details</h2>
+                              <p>*You will not be able to edit your surname or date of birth after this point so please check this information carefully.</p>
+                              <div class="University-name cs3">
+                                  <label>Title :</label>
+                                  <select class="form-control" formControlName="title" 
+                                  [ngClass]="{ 'is-invalid': submitted && section1Form.get('title').hasError('required') }" >
+                                      <option value="" disabled selected>Select title</option>
+                                      <option value="Mr">Mr</option>
+                                      <option value="Mrs">Mrs</option>
+                                      <option value="Ms">Ms</option>
+                                      <option value="Prof">Prof</option>
+                                      <option value="Dr">Dr</option>
+                                      <option value="Doctor/Other">Doctor/Other</option>
+                                  </select>
+                                  <i class="fa fa-sort-down"></i>
+                                  <div *ngIf="submitted && section1Form.get('title').hasError" >
+                                      <div *ngIf="section1Form.get('title').hasError('required')" class="danger">
+                                          *please enter the title
+                                      </div>
+                                  </div>
+                              </div>
+
+                              <div class="form-group cs3 mt-3">
+                                  <label for="exampleInputEmail1">Surname(Family Name) :</label>
+                                  <input type="text" class="form-control" placeholder="Enter name" formControlName="surName" 
+                                  [ngClass]="{ 'is-invalid': submitted && section1Form.get('surName').hasError('required') }" >
+                                  <div *ngIf="submitted && section1Form.get('surName').hasError" >
+                                      <div *ngIf="section1Form.get('surName').hasError('required')" class="danger">
+                                          *please enter the surName
+                                      </div>
+                                      <div *ngIf="section1Form.get('surName').hasError('pattern')" class="danger">
+                                        *please enter the valid surName
+                                      </div>
+                                  </div>
+                              </div>
+
+                              <div class="form-group cs3">
+                                  <label for="exampleInputEmail1">Fore Name :</label>
+                                  <input type="text" class="form-control" placeholder="Fore Name" formControlName="foreName" 
+                                  [ngClass]="{ 'is-invalid': submitted && section1Form.get('foreName').hasError('required') }" >
+                                  <div *ngIf="submitted && section1Form.get('foreName').hasError" >
+                                      <div *ngIf="section1Form.get('foreName').hasError('required')" class="danger">
+                                          *please enter the foreName
+                                      </div>
+                                      <div *ngIf="section1Form.get('foreName').hasError('pattern')" class="danger">
+                                        *please enter the valid foreName
+                                      </div>
+                                  </div>
+                              </div>
+
+                              <div class="form-group cs3">
+                                  <label for="exampleInputEmail1">Preferred Name :</label>
+                                  <input type="text" class="form-control" placeholder="Preferred Name"  formControlName="prefferedName"  
+                                  [ngClass]="{ 'is-invalid': submitted && section1Form.get('prefferedName').hasError('required') }" >
+                                  <div *ngIf="submitted && section1Form.get('prefferedName').hasError" >
+                                      <div *ngIf="section1Form.get('prefferedName').hasError('required')" class="danger">
+                                          *please enter the prefferedName
+                                      </div>
+                                      <div *ngIf="section1Form.get('prefferedName').hasError('pattern')" class="danger">
+                                        *please enter the valid prefferedName
+                                      </div>
+                                  </div>
+                              </div>
+
+                              <div class="radi">Select Gender :</div>
+                                  <label class="radio-inline">
+                                      <input type="radio" name="gender" value="MALE" style="margin-right:20px" checked formControlName="gender">Male
+                                  </label>
+                                  <label class="radio-inline radio_src">
+                                      <input type="radio" name="gender" value="FEMALE" formControlName="gender">Female
+                                  </label>
+                                  <label class="radio-inline radio_src">
+                                      <input type="radio" name="gender" value="OTHERS" formControlName="gender"> Prefer not to say
+                                  </label>
+                                  <div *ngIf="submitted && section1Form.get('gender').hasError" style="top: -20px;">
+                                      <div *ngIf="section1Form.get('gender').hasError('required')" class="danger">
+                                          *please enter the gender
+                                      </div>
+                                  </div>
+
+
+                              <div class="form-group cs3">
+                                  <label for="exampleInputEmail1">Email ID :</label>
+                                  <input type="email" class="form-control" placeholder="Email ID" formControlName="email" 
+                                  [ngClass]="{ 'is-invalid': submitted && section1Form.get('email').hasError('required') }" >
+                                  <div *ngIf="submitted && section1Form.get('email').hasError" >
+                                      <div *ngIf="section1Form.get('email').hasError('required')" class="danger">
+                                          *please enter the email
+                                      </div>
+                                      <div *ngIf="section1Form.get('email').hasError('pattern')" class="danger">
+                                        *please enter the valid email
+                                      </div>
+                                  </div>
+                              </div>
+
+                              <div class="form-group cs3">
+                                  <label for="exampleInputEmail1">Confirm E-mail ID :</label>
+                                  <input type="email" class="form-control" placeholder="Email ID" formControlName="confirmEmail"                                   
+                                  [ngClass]="{ 'is-invalid': submitted && section1Form.get('confirmEmail').hasError('required') }" >
+                                  <div *ngIf="submitted && section1Form.get('confirmEmail').hasError" >
+                                      <div *ngIf="section1Form.get('confirmEmail').hasError('required')" class="danger">
+                                          *please enter the confirmEmail
+                                      </div>
+                                      <div  *ngIf="(section1Form.value.email != section1Form.value.confirmEmail) && section1Form.get('confirmEmail').dirty" class="danger">
+                                        *please enter the same email
+                                      </div>
+                                  </div>
+                              </div>
+
+                              <div class="University-name cs3 mb-3">
+                                  <label>Country of Permanent Residence :</label>
+                                  <select class="form-control" formControlName="permanentResidenceCountry"
+                                  [ngClass]="{ 'is-invalid': submitted && section1Form.get('permanentResidenceCountry').hasError('required') }" >
+                                    <option disabled selected value=""> Select county</option>
+                                    <option *ngFor="let item of countryList" value="{{item.country}}">{{item.country}}</option>
+                                  </select>
+                                  <i class="fa fa-sort-down"></i>
+                                  <div *ngIf="submitted && section1Form.get('permanentResidenceCountry').hasError" >
+                                      <div *ngIf="section1Form.get('permanentResidenceCountry').hasError('required')" class="danger">
+                                          *please enter the permanentResidenceCountry
+                                      </div>
+                                      <div *ngIf="section1Form.get('permanentResidenceCountry').hasError('pattern')" class="danger">
+                                        *please enter the valid permanentResidenceCountry
+                                      </div>
+                                  </div>
+                              </div>
+
+                              <div class="form-group cs3">
+                                  <label for="exampleInputEmail1">Date of Birth :</label>
+                                  <input type="date" class="form-control" placeholder="DD/MM/YY" formControlName="dateOfBirth"                                  
+                                  [ngClass]="{ 'is-invalid': submitted && section1Form.get('dateOfBirth').hasError('required') }" >
+                                  <div *ngIf="submitted && section1Form.get('dateOfBirth').hasError" >
+                                      <div *ngIf="section1Form.get('dateOfBirth').hasError('required')" class="danger">
+                                          *please enter the dateOfBirth
+                                      </div>
+                                      <div *ngIf="section1Form.get('dateOfBirth').hasError('pattern')" class="danger">
+                                        *please enter the valid dateOfBirth
+                                      </div>
+                                  </div>
+                              </div>
+
+                              <div class="University-name cs3 mb-3">
+                                  <label>Country of Birth :</label>
+                                  <select class="form-control" formControlName="CountryOfBirth" [ngClass]="{ 'is-invalid': submitted && section1Form.get('CountryOfBirth').hasError('required') }" >
+                                    <option disabled selected value=""> Select county</option>
+                                    <option *ngFor="let item of countryList" value="{{item.country}}">{{item.country}}</option>
+                                  </select>
+                                  <i class="fa fa-sort-down"></i>
+                                  <div *ngIf="submitted && section1Form.get('CountryOfBirth').hasError" >
+                                      <div *ngIf="section1Form.get('CountryOfBirth').hasError('required')" class="danger">
+                                          *please enter the CountryOfBirth
+                                      </div>
+                                      <div *ngIf="section1Form.get('CountryOfBirth').hasError('pattern')" class="danger">
+                                        *please enter the valid CountryOfBirth
+                                      </div>
+                                  </div>
+                              </div>
+
+                              <!-- <div class="University-name cs3 mb-3">
+                                  <label>Country of Permanent Residence :</label>
+                                  <select class="form-control" >
+                                    <option>UK</option>
+                                  </select>
+                                  <i class="fa fa-sort-down"></i>
+                              </div> -->
+
+                              <div class="form-group cs3">
+                                  <label for="exampleInputEmail1">Passport Number :</label>
+                                  <input type="email" class="form-control" placeholder="Passport Number" formControlName="passportNumber"
+                                  [ngClass]="{ 'is-invalid': submitted && section1Form.get('passportNumber').hasError('required') }" >
+                                  <div *ngIf="submitted && section1Form.get('passportNumber').hasError" >
+                                      <div *ngIf="section1Form.get('passportNumber').hasError('required')" class="danger">
+                                          *please enter the passportNumber
+                                      </div>
+                                      <div *ngIf="section1Form.get('passportNumber').hasError('pattern')" class="danger">
+                                        *please enter the valid passportNumber
+                                      </div>
+                                  </div>
+                              </div>
+
+                              <div class="University-name cs3 mb-3">
+                                  <label>Do you require a visa to study in the UK :</label>
+                                  <select class="form-control" formControlName="requireVisaForUK" [ngClass]="{ 'is-invalid': submitted && section1Form.get('requireVisaForUK').hasError('required') }" >
+                                    <option value="true">Yes</option>
+                                    <option value="false">No</option>
+                                  </select>
+                                  <i class="fa fa-sort-down"></i>
+                                  <div *ngIf="submitted && section1Form.get('requireVisaForUK').hasError" >
+                                      <div *ngIf="section1Form.get('requireVisaForUK').hasError('required')" class="danger">
+                                          *please enter the requireVisaForUK
+                                      </div>
+                                      <div *ngIf="section1Form.get('requireVisaForUK').hasError('pattern')" class="danger">
+                                        *please enter the valid requireVisaForUK
+                                      </div>
+                                  </div>
+                              </div>
+
+                              <div class="University-name cs3 mb-3">
+                                  <label>Ethnicity (UK / EU Only) :</label>
+                                  <select class="form-control" formControlName="ethnicity"
+                                  [ngClass]="{ 'is-invalid': submitted && section1Form.get('ethnicity').hasError('required') }" >
+                                        <option value="English / Welsh / Scottish / Northern Irish / British" > English / Welsh / Scottish / Northern Irish / British</option>
+                                        <option value="Irish" > Irish</option>
+                                        <option value="Gypsy or Irish Traveller" > Gypsy or Irish Traveller</option>
+                                        <option value="Any other White background" > Any other White background</option>
+                                        <option value="White and Black Caribbean" > White and Black Caribbean</option>
+                                        <option value="White and Black African" > White and Black African</option>
+                                        <option value="White and Asian" > White and Asian</option>
+                                        <option value="Any other Mixed / Multiple ethnic background" > Any other Mixed / Multiple ethnic background</option>
+                                        <option value="Indian" > Indian</option>
+                                        <option value="Pakistani" > Pakistani</option>
+                                        <option value="Bangladeshi" > Bangladeshi</option>
+                                        <option value="Chinese" > Chinese</option>
+                                        <option value="Any other Asian background" > Any other Asian background</option>
+                                        <option value="African" > African</option>
+                                        <option value="Caribbean" > Caribbean</option>
+                                        <option value="Any other Black / African / Caribbean background<" > Any other Black / African / Caribbean background</option>
+                                        <option value="Arab" > Arab</option>
+                                        <option value="Any other ethnic group" > Any other ethnic group</option>
+                                  </select>
+                                  <i class="fa fa-sort-down"></i>
+                                  <div *ngIf="submitted && section1Form.get('ethnicity').hasError" >
+                                      <div *ngIf="section1Form.get('ethnicity').hasError('required')" class="danger">
+                                          *please enter the ethnicity
+                                      </div>
+                                      <div *ngIf="section1Form.get('ethnicity').hasError('pattern')" class="danger">
+                                        *please enter the valid ethnicity
+                                      </div>
+                                  </div>
+                              </div>
+
+                              <div class="University-name cs3 mb-3">
+                                  <label>Disability :</label>
+                                  <select class="form-control" formControlName="disability" 
+                                  [ngClass]="{ 'is-invalid': submitted && section1Form.get('disability').hasError('required') }" >
+                                    <option value="false">No</option>
+                                    <option value="true">Yes</option>
+                                  </select>
+                                  <i class="fa fa-sort-down"></i>
+                                  <div *ngIf="submitted && section1Form.get('disability').hasError" >
+                                    <div *ngIf="section1Form.get('disability').hasError('required')" class="danger">
+                                        *please enter the disability
+                                    </div>
+                                </div>
+                              </div>
+
+                              <div class="form-group cs3">
+                                    <label for="exampleInputEmail1">Description (If Yes, please indicate which disability):</label>
+                                    <textarea class="form-control" rows="3"  formControlName="descriptionForDisablity" >
+                                    </textarea>
+                                    <div  *ngIf="(section1Form.value.disability == 'true') && (section1Form.value.descriptionForDisablity == '')" class="danger">
+                                        *please enter the description For Disablity
+                                    </div>
+                              </div>
+
+                              <div class="University-name cs3 mb-3">
+                                  <label>Relevant Criminal Convictions :</label>
+                                  <select class="form-control"  formControlName="criminalConviction" [ngClass]="{ 'is-invalid': submitted && section1Form.get('criminalConviction').hasError('required') }" >
+                                    <option value="false">No</option>
+                                    <option value="true">Yes</option>
+                                  </select>
+                                  <i class="fa fa-sort-down"></i>
+                                  <div *ngIf="submitted && section1Form.get('criminalConviction').hasError" >
+                                    <div *ngIf="section1Form.get('criminalConviction').hasError('required')" class="danger">
+                                        *please enter the criminalConviction
+                                    </div>
+                                </div>
+                              </div>
+
+                              <div class="form-group cs3">
+                                  <label for="exampleInputEmail1">Description (If Yes,Please provide more information):</label>
+                                  <textarea class="form-control" rows="3"  formControlName="descriptionForCriminalConviction" >                                    
+                                  </textarea>
+                                  <div  *ngIf="(section1Form.value.criminalConviction == 'true') && (section1Form.value.descriptionForCriminalConviction == '')" class="danger">
+                                    *please enter the description For Disablity
+                                </div>
+                              </div>
+
+                            </div>
+                            <div class="cntact-button back">
+                                <button class="theme-btn router-link" [routerLink]="['/section1']">Back</button>
+                                <button class="theme-btn active router-link" (click)="continue()" >Continue</button>
+                                <button class="theme-btn active router-link" (click)="saveAndQuit()">Save and Quit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">&nbsp;</h5>
+        </div>
+        <div class="modal-body">
+            Congratulations your form has been submitted successfully!You will get the email notification of each status of your form.
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="theme-btn router-link  okay" data-dismiss="modal" [routerLink]="['/dashboard']">OK</button>
+        </div>
+        </div>
+    </div>
+</div>

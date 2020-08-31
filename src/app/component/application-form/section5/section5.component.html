@@ -1,0 +1,272 @@
+<section>
+    <div class="container1440 mt-5">
+        <h5 class="application_pro">Application Form</h5>
+        <div class="application-form mt-5">
+            <form [formGroup]="section5Form">
+                <div class="academic">
+                    <h5 class="application_pro">English Language</h5>
+
+                    <div class="University-name cs3 mb-3">
+                        <label>Are you a native of an english speaking country ?</label>
+                        <select class="form-control" formControlName="nativeOfEnglishSpeakingCountry" (change)="selectNativeOfEnglishSpeakingCountry($event)"
+                        [ngClass]="{ 'is-invalid': submitted && section5Form.get('nativeOfEnglishSpeakingCountry').hasError('required') }">  
+                            <option value="true">Yes</option>
+                            <option value="false">No</option>
+                        </select>
+                        <i class="fa fa-sort-down"></i>
+                        <div *ngIf="submitted && section5Form.get('nativeOfEnglishSpeakingCountry').hasError" >
+                            <div *ngIf="section5Form.get('nativeOfEnglishSpeakingCountry').hasError('required')" class="danger">
+                                *please enter the nativeOfEnglishSpeakingCountry
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="University-name cs3 mb-3">
+                        <label>If yes, please select your country :</label>
+                        <select class="form-control" formControlName="nativeEnglishSpeakingCountryName"
+                        [ngClass]="{ 'is-invalid': submitted && section5Form.get('nativeEnglishSpeakingCountryName').hasError('required') }">
+                            <option value="" selected>Select country</option>
+                            <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+                            <option value="Australia">Australia</option>
+                            <option value="Barbados">Barbados</option>
+                            <option value="Belize">Belize</option>
+                            <option value="British Antarctic Territory (BAT)">British Antarctic Territory (BAT)</option>
+                            <option value="British Indian Ocean Territory (BIOT)">British Indian Ocean Territory (BIOT)</option>
+                            <option value="Canada">Canada</option>
+                            <option value="Dominica">Dominica</option>
+                            <option value="English Country">English Country</option>
+                            <option value="Falkland Islands">Falkland Islands</option>
+                            <option value="Gibraltar">Gibraltar</option>
+                            <option value="Grenada">Grenada</option>
+                            <option value="Guernsey">Guernsey</option>
+                            <option value="Guyana">Guyana</option>
+                            <option value="Ireland">Ireland</option>
+                            <option value="Isle of Man">Isle of Man</option>
+                            <option value="Jamaica">Jamaica</option>
+                            <option value="Jersey">Jersey</option>
+                            <option value="New Zealand">New Zealand</option>
+                            <option value="Sovereign Base Areas of Akrotiri and Dhekelia on Cyprus">Sovereign Base Areas of Akrotiri and Dhekelia on Cyprus</option>
+                            <option value="St Kitts and Nevis">St Kitts and Nevis</option>
+                            <option value="St Lucia">St Lucia</option>
+                            <option value="St Vincent and the Grenadines">St Vincent and the Grenadines</option>
+                            <option value="The Bahamas">The Bahamas</option>
+                            <option value="The United States of America">The United States of America</option>
+                            <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+                            <option value="United Kingdom">United Kingdom</option>
+                            <option value="US Virgin Islands">US Virgin Islands</option>
+                        </select>
+                        <i class="fa fa-sort-down"></i>
+                        <div *ngIf="section5Form.get('nativeEnglishSpeakingCountryName').hasError" >
+                            <div *ngIf="section5Form.get('nativeEnglishSpeakingCountryName').hasError('required')" class="danger">
+                                *please enter the nativeEnglishSpeakingCountryName
+                            </div>
+                        </div>
+                        <div  *ngIf="(section5Form.value.nativeOfEnglishSpeakingCountry == 'true') && (section5Form.value.nativeEnglishSpeakingCountryName == '')" class="danger">
+                            *please enter the nativeOfEnglishSpeakingCountry
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>If no, please provide details of your more recent English language test undertaken</label>
+                        <textarea class="form-control" rows="3" formControlName="englishLanguageTestDetails"[ngClass]="{ 'is-invalid': submitted && section5Form.get('englishLanguageTestDetails').hasError('required') }"></textarea>
+                        <div *ngIf="submitted && section5Form.get('englishLanguageTestDetails').hasError" >
+                            <div *ngIf="section5Form.get('englishLanguageTestDetails').hasError('required')" class="danger">
+                                *please enter the englishLanguageTestDetails
+                            </div>
+                        </div>
+                        <div  *ngIf="(section5Form.value.nativeOfEnglishSpeakingCountry == 'false') && (section5Form.value.englishLanguageTestDetails == '')" class="danger">
+                            *please enter the nativeOfEnglishSpeakingCountry
+                        </div>
+                    </div>
+
+                    <div class="University-name cs3 mb-3">
+                        <label>Do you have any professional qualification ?</label>
+                        <select class="form-control" formControlName="professionalQualification" [ngClass]="{ 'is-invalid': submitted && section5Form.get('professionalQualification').hasError('required') }">
+                          <option value="true">Yes</option>
+                          <option value="false">No</option>
+                        </select>
+                        <i class="fa fa-sort-down"></i>
+                        <div *ngIf="submitted && section5Form.get('professionalQualification').hasError" >
+                            <div *ngIf="section5Form.get('professionalQualification').hasError('required')" class="danger">
+                                *please enter the professionalQualification
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="University-name cs3 mb-3">
+                        <label>If yes, please select your english qualification :</label>
+                        <select class="form-control" formControlName="englishQualificationName"
+                        [ngClass]="{ 'is-invalid': submitted && section5Form.get('englishQualificationName').hasError('required') }">
+                        <option selected disabled value="">Select type</option>
+                        <option *ngFor="let item of globalEnglishQualificationList" value="{{item.professionalQualificationName}}">{{item.professionalQualificationName}}</option>
+                        </select>
+                        <i class="fa fa-sort-down"></i>
+                        <div *ngIf="submitted && section5Form.get('englishQualificationName').hasError" >
+                            <div *ngIf="section5Form.get('englishQualificationName').hasError('required')" class="danger">
+                                *please enter the englishQualificationName
+                            </div>
+                        </div>
+                        <div  *ngIf="(section5Form.value.professionalQualification == 'true') && (section5Form.value.englishQualificationName == '')" class="danger">
+                            *please enter the englishQualificationName
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Date Test Taken :</label>
+                        <input type="date" class="form-control" placeholder="DD/MM/YY" formControlName="englishQualificationDate" [ngClass]="{ 'is-invalid': submitted && section5Form.get('englishQualificationDate').hasError('required') }">
+                        <!-- <i class="fa fa-calendar" aria-hidden="true"></i> -->
+                        <div *ngIf="submitted && section5Form.get('englishQualificationDate').hasError" >
+                            <div *ngIf="section5Form.get('englishQualificationDate').hasError('required')" class="danger">
+                                *please enter the englishQualificationDate
+                            </div>
+                        </div>
+                        <div  *ngIf="(section5Form.value.professionalQualification == 'true') && (section5Form.value.englishQualificationDate == '')" class="danger">
+                            *please enter the englishQualificationDate
+                        </div>
+                    </div>
+
+                    <div class="individual">
+                        <div class="form-group">
+                            <label>Individual band score :</label>
+                            <input type="number" class="form-control" placeholder="Reading score" formControlName="englishQualificationScore1"
+                            [ngClass]="{ 'is-invalid': submitted && section5Form.get('englishQualificationScore1').hasError('required') }">
+                            <div *ngIf="submitted && section5Form.get('englishQualificationScore1').hasError" >
+                                <div *ngIf="section5Form.get('englishQualificationScore1').hasError('required')" class="danger">
+                                    *please enter the englishQualificationScore1
+                                </div>
+                            </div>
+                            <div  *ngIf="(section5Form.value.professionalQualification == 'true') && (section5Form.value.englishQualificationScore1 == '')" class="danger">
+                                *please enter the englishQualificationScore1
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>&nbsp;</label>
+                            <input type="number" class="form-control" placeholder="Listening score" formControlName="englishQualificationScore2"
+                            [ngClass]="{ 'is-invalid': submitted && section5Form.get('englishQualificationScore2').hasError('required') }">
+                            <div *ngIf="submitted && section5Form.get('englishQualificationScore2').hasError" >
+                                <div *ngIf="section5Form.get('englishQualificationScore2').hasError('required')" class="danger">
+                                    *please enter the englishQualificationScore2
+                                </div>
+                            </div>
+                            <div  *ngIf="(section5Form.value.professionalQualification == 'true') && (section5Form.value.englishQualificationScore2 == '')" class="danger">
+                                *please enter the englishQualificationScore2
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="individual">
+                        <div class="form-group">
+                            <input type="number" class="form-control" placeholder="Writing score"  formControlName="englishQualificationScore3"
+                            [ngClass]="{ 'is-invalid': submitted && section5Form.get('englishQualificationScore3').hasError('required') }">
+                            <div *ngIf="submitted && section5Form.get('englishQualificationScore3').hasError" >
+                                <div *ngIf="section5Form.get('englishQualificationScore3').hasError('required')" class="danger">
+                                    *please enter the englishQualificationScore3
+                                </div>
+                            </div>
+                            <div  *ngIf="(section5Form.value.professionalQualification == 'true') && (section5Form.value.englishQualificationScore3 == '')" class="danger">
+                                *please enter the englishQualificationScore3
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" class="form-control" placeholder="Speaking score" formControlName="englishQualificationScore4"
+                            [ngClass]="{ 'is-invalid': submitted && section5Form.get('englishQualificationScore4').hasError('required') }">
+                            <div *ngIf="submitted && section5Form.get('englishQualificationScore4').hasError" >
+                                <div *ngIf="section5Form.get('englishQualificationScore4').hasError('required')" class="danger">
+                                    *please enter the englishQualificationScore4
+                                </div>
+                            </div>
+                            <div  *ngIf="(section5Form.value.professionalQualification == 'true') && (section5Form.value.englishQualificationScore4 == '')" class="danger">
+                                *please enter the englishQualificationScore4
+                            </div>
+                        </div>
+                    </div>
+
+                    <p>If no, please select your highest  acedimic english qualification:</p>
+                    <div class="University-name cs3 mb-3">
+                        <label>Select Country :</label>
+                        <select class="form-control" formControlName="highestAcedemicQualification" (change)= "gethighestAcedemicQualification($event.target.value,i)"
+                            [ngClass]="{ 'is-invalid': submitted && section5Form.get('highestAcedemicQualification').hasError('required') }">
+                            <option disabled selected value=""> Select county</option>
+                            <option *ngFor="let item of countryList" value="{{item.country}}">{{item.country}}</option>
+                        </select>
+                        <i class="fa fa-sort-down"></i>
+                        <div *ngIf="submitted && section5Form.get('highestAcedemicQualification').hasError" >
+                            <div *ngIf="section5Form.get('highestAcedemicQualification').hasError('required')" class="danger">
+                                *please enter the highestAcedemicQualification
+                            </div>
+                        </div>
+                        <div  *ngIf="(section5Form.value.professionalQualification == 'false') && (section5Form.value.highestAcedemicQualification == '')" class="danger">
+                            *please enter the englishQualificationScore4
+                        </div>
+                    </div>
+
+                    <div class="University-name cs3 mb-3">
+                        <label>Type of English Qualification :</label>
+                        <select class="form-control" formControlName="typeOfEnglishQualification"
+                            [ngClass]="{ 'is-invalid': submitted && section5Form.get('typeOfEnglishQualification').hasError('required') }">
+                            <option selected disabled value="">Select type</option>
+                            <option *ngFor="let item of globalEnglishAcademicList" value="{{item.academicQualification}}">{{item.academicQualification}}</option>
+                        </select>
+                        <i class="fa fa-sort-down"></i>
+                        <div *ngIf="submitted && section5Form.get('typeOfEnglishQualification').hasError" >
+                            <div *ngIf="section5Form.get('typeOfEnglishQualification').hasError('required')" class="danger">
+                                *please enter the typeOfEnglishQualification
+                            </div>
+                        </div>
+                        <div  *ngIf="(section5Form.value.professionalQualification == 'false') && (section5Form.value.typeOfEnglishQualification == '')" class="danger">
+                            *please enter the englishQualificationScore4
+                        </div>
+                    </div>
+
+                    <div class="University-name cs3 mb-3">
+                        <label>Result Type :</label>
+                        <select class="form-control" formControlName="resultType"  (change)="changeResult($event)"
+                            [ngClass]="{ 'is-invalid': submitted && section5Form.get('resultType').hasError('required') }">
+                            <option selected disabled value="">Select type</option>
+                            <option *ngFor="let item of resultTypeList" value="{{item.resultName}}">{{item.resultName}}</option>
+                        </select>
+                        <i class="fa fa-sort-down"></i>
+                        <div *ngIf="submitted && section5Form.get('resultType').hasError" >
+                            <div *ngIf="section5Form.get('resultType').hasError('required')" class="danger">
+                                *please enter the resultType
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Overall Result :</label>
+                        <input type="{{resultType}}" class="form-control" placeholder="Result" formControlName="overallResult"
+                        [ngClass]="{ 'is-invalid': submitted && section5Form.get('overallResult').hasError('required') }">
+                        <div *ngIf="submitted && section5Form.get('overallResult').hasError" >
+                            <div *ngIf="section5Form.get('overallResult').hasError('required')" class="danger">
+                                *please enter the overallResult
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="cntact-button back">
+                    <button class="theme-btn router-link" [routerLink]="['/section4']">Back</button>
+                    <button class="theme-btn active router-link" (click)="continue()">Continue</button>
+                    <button class="theme-btn router-link" (click)="saveAndQuit()">Save and Quit</button>
+                </div>
+            </form>
+        </div>         
+    </div>
+  </section>
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">&nbsp;</h5>
+        </div>
+        <div class="modal-body">
+            Congratulations your form has been submitted successfully!You will get the email notification of each status of your form.
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="theme-btn router-link  okay" data-dismiss="modal" [routerLink]="['/dashboard']">OK</button>
+        </div>
+        </div>
+    </div>
+</div>

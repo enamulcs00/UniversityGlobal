@@ -1,0 +1,818 @@
+@media(max-width: 1440px){
+h1.center-text {
+    font-size: 35px;
+}
+/*****************************************@media(max-width: 768px){}******************************************/
+
+
+@media(max-width: 1024px){
+ul.location li:nth-child(even){
+    width:auto;
+}
+ul.location li:nth-child(odd){
+    width:auto;
+}
+.row.cs3 {
+    width: 100%;
+    max-width: 100%;
+}
+ul.location.cs li:nth-child(odd) {
+    width: 42%;
+}
+ul.careersit{width: 100%;max-width: 100%;}
+.st_cs {
+    width: 33.5%;
+}
+input.form-control.location_search {
+    background: #fff url(../images/search-icon.png) 201px 12px no-repeat;
+}
+input.form-control.location_search {
+    width: 230px;
+}
+li.submit-cs {
+    width: 16% !important;
+}
+.h_apply ul li button.theme-btn {
+    width: 138px;}
+.address {
+    width: 100%;
+    max-width: 50%;
+}
+.form-group.cs3 input.form-control {
+    width: 587px;
+}
+.info-box {
+    max-width: 639px;
+    padding: 45px 30px;
+}
+.form-group.cs3 select.form-control.cs{width: 587px}
+.form-group.cs3 ul.tele_cs input.form-control {
+    width: 449px;
+}
+a.nav-link.general_cs {
+    padding: 12px 17px;}
+.form_submit {
+    width: 100%;
+    max-width: 60%;}
+li.nav-item.create_new a.nav-link {
+    padding: 5px 16px;
+font-size: 16px}
+.personal-details {
+    width: 100%;
+    max-width: 80%;}
+}
+@media(max-width: 768px){
+    .banner-content{
+        display: block;
+    }
+    .het100 {
+    height: auto;
+}
+.slick_slider .slider.slick-slide img {
+    max-width: 212px;
+    height: 221px;
+}
+h6.usa_cs {
+    font-size: 25px;
+    width: 100%;
+    max-width: 218px;
+}
+ul.location {
+    font-size: 14px;}
+   .world.cs3 {
+    width: 100%;
+    max-width: 100%;
+} 
+ul.offer{font-size: 14px}
+ul.career {
+    display: flex;
+    font-size: 14px;
+    justify-content: initial;
+    flex-wrap: wrap;
+}
+.st_cs {
+    width: 26.5%;
+}
+ul.careersit {
+    width: 100%;
+    max-width: 83%;
+}
+ul.careersit{font-size: 14px}
+ul.add_to.compar button.theme-btn {
+    width: 188px;
+    margin: 25px 60px 0px 0px;
+}
+.h_apply ul li {
+    width: 27%;}
+    li.submit-cs {
+    width: 22% !important;
+}
+.h_apply ul li button.theme-btn {
+    margin-left: -1px;}
+.address {
+    width: 100%;
+    max-width: 75%;
+}
+.form-group.cs3 input.form-control {
+    width: 432px;
+}
+.info-box {
+    max-width: 487px;
+    padding: 24px 30px;
+}
+.form-group.cs3 select.form-control.cs{ width: 432px; }
+.form-group.cs3 ul.tele_cs input.form-control {
+    width: 531px;
+}
+h4.manage {
+    font-size: 25px;
+    padding: 10px 0px;
+}
+.pick_cs i.fa.fa-pencil-square-o {
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+    top: 11px;
+    right: -19px;
+    padding: 10px;
+}
+a.nav-link.general_cs {
+    font-size: 14px;}
+.changs .nav.flex-column.nav-pills {
+    width: 209px;}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link.general_cs{font-size: 14px}
+
+.month_cs h1 {
+    font-size: 15px;
+   
+}
+.month_cs ul li {
+    font-size: 13px;}
+.right-section {
+    width: 68.5%;
+}
+h3.manage {
+    font-size: 22px;
+    padding: 12px 0px;
+}
+.left_section {
+    padding-top: 35px;
+}
+.manage_user ul li p {
+    top: 40%;
+    left: 30%;
+    font-size: 15px;
+}
+i.fa.fa-trash {
+    right: 7px;
+    top: 6px;
+    font-size: 15px;}
+.pick_cs p {
+    font-size: 20px;
+    padding: 10px 0px;
+}
+.form_submit {
+    width: 100%;
+    max-width: 100%;}
+    .search_section ul li {
+    width: 48%;}
+.search_section ul {
+    flex-wrap: wrap;
+    padding:0px;
+}
+.main_formId {
+    padding: 20px;
+}
+li.nav-item.create_new {
+    width: 33%;
+    margin: 10px 0px;
+}
+.location-name.cs3 {
+    flex-wrap: wrap;
+}
+.location-name {
+    width: 100%;
+    max-width: 100%;
+}
+.entry ul {
+    font-size: 14px;}
+    .entry ul li {
+    padding: 0px;
+}
+.location-name.cs3 button.theme-btn {
+    height: 40px;
+    width: 202px;
+    font-size: 15px;
+}
+.my_history {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.application-form{width: 100%;max-width: 100%;}
+h1.center-text {
+    font-size: 40px;
+    line-height: 57px;
+}
+.image-test h3 {
+    top: 35%;
+    left: 50%;
+    font-size: 20px;
+    line-height: 31px;
+}
+.image-test {
+    height: 240px;
+}
+}
+@media(max-width: 767px){
+    h1.center-text {
+        font-size: 36px;
+    }
+    h2.commonheading {
+        font-size: 30px;
+    }
+    .rmit {
+    width: 48%;}
+    .modal-body.modal_cs{
+        width: auto;
+    }
+    input.form-control {
+    width: 100%;
+}
+
+ul.tele_cs li input.form-control {
+    width: 100%;
+}
+.address {
+    width: 100%;
+    max-width: 100%;
+}
+.pick_cs {
+    text-align: left;
+}
+
+.changs {
+    margin-bottom: 30px;
+}
+.form-group.cs3 input.form-control {
+    width: 675px;
+}
+.info-box {
+    max-width: 100%;}
+.subscribe{
+    flex-wrap: wrap;
+}
+.pick_cs img {
+    width: 100%;
+    max-width: 22%;
+}
+.left_section{width: 100%;}
+.right-section{width: 100%;}
+.general-info{
+    width: 100%;max-width: 100%
+}
+.details .form-group.cs3 input.form-control {
+    width: 432px;
+}
+.search_by_reset {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom:35px;
+}
+.matching .custom-checkbox {
+    font-size: 14px;
+}
+}
+
+@media(max-width:414px){
+.australia ul {
+    flex-wrap: wrap;
+}
+.rmit {
+    width:93%;}
+
+.australia ul li {
+    margin-right: 0px;
+    margin: 10px 0px;
+}
+.slick-prev, .slick-next {
+    right: -34px;
+    width: 40px;
+    height: 40px;
+    padding: 5px 14px;}
+ button.slick-prev.slick-arrow {
+    left: -33px;
+}
+.suggestion h3 {
+    font-size: 20px;
+    padding: 15px 0px;}
+.count_cs {
+    border: 0px solid #b7b7b7;
+    box-shadow: 0px 0px 9px 0px #ccc;
+}
+.about-australia h5 {
+    font-size: 20px;
+    padding: 10px 0px;
+}
+.about-australia p {
+    font-size: 14px;
+    line-height: 23px;
+}
+footer{height:auto; padding-top: 15px;}
+input.form-control.subject {
+    width: 380px;
+    height: 46px;}
+.aus {
+    padding: 37px 15px;
+}
+h4.most {
+    font-size: 20px;
+    padding: 20px 0px;
+}
+h6.usa_cs {
+    width: 100%;
+    max-width: 337px;
+}
+.social-icons {
+    width: 100%;
+    max-width: 69%;
+    margin-bottom: 15px;
+}
+button.theme-btn {
+    width: 157px;
+    height: 42px;
+    font-size: 16px;}
+.world {
+    width: 100%;
+    max-width: 100%;
+    justify-content: inherit;
+}
+.dolor {
+    background-color: #ffffff;
+    border: 0px solid #b7b7b7;
+    padding: 20px 20px;
+    filter: drop-shadow(0 0 6.5px rgba(39,39,39,0.45));
+}
+ul.add_to.compar button.theme-btn {
+    width: 110px;
+    font-size: 14px;
+    margin: 0px 0px 0px 6px;
+    filter: none;
+}
+ul.careersit {
+    width: 100%;
+    max-width: 100%;
+    display: block;
+
+}
+ul.careersit li {
+    padding: 15px 0px;
+}
+.entry.mt-4 {
+    margin-top: 10px !important;
+}
+ul.Student{font-size: 14px}
+p.read-_more {
+    padding-top: 0px;
+}
+h4.study {
+    font-size: 16px;
+    padding: 15px 0px;
+}
+input.form-control.search {
+    height: 40px;}
+ i.fa.fa-search {
+    font-size: 18px;
+    top: 11px;
+}
+.imgs img {
+    height:100%;
+}
+.search_by input.form-control.search {
+    width: 318px;
+    height: 44px;
+}
+.search_by{flex-wrap: wrap;}
+select.form-control.news{  height: 44px !important; margin-top: 10px}
+
+.n_sec {
+    font-size: 14px;
+    padding: 10px 11px 28px;
+}
+.remove_form button.theme-btn {
+    width: 155px;
+    font-size: 13px;
+    height: 35px;
+    margin-bottom: 10px;
+}
+.remove_form {
+    margin-top: -20px;
+}
+.table_cs.mt-5 table.table {
+    font-size: 13px;}
+    ul.read-more li a{
+        font-size: 14px;    
+    }
+.text2 p{font-size: 13px;}
+.location_details {
+    box-shadow: 0px 0px 5px 0px #d3cbcb;
+    margin-top: 20px;
+}
+.modal-body.modal_cs button.theme-btn {
+    width: 116px;
+}
+.sign_in button.theme-btn.active {
+    width: 340px;
+}
+.sign_in.mt-5.mb-5 {
+    margin: 30px 0px !important;
+}
+.howit_work {
+    margin-bottom: 25px;
+}
+.h_apply ul li {
+    width: 100%;
+    flex-wrap: wrap;
+} 
+select.form-control.kingdom {
+    background: #fff url(../images/icon-drop.png) 315px 15px no-repeat;
+} 
+input.form-control.location_search {
+    width: 100%;
+}   
+input.form-control.location_search {
+    background: #fff url(../images/search-icon.png) 308px 12px no-repeat;
+} 
+.h_apply ul li button.theme-btn {
+    width: 160px;
+}   
+li.submit-cs {
+    width: 50% !important;
+}
+.main_ul ul li {
+    font-size: 12px;}  
+.h_apply ul li{margin-left: 0px}
+.h_apply ul li button.theme-btn{margin-top: 15px}
+.panel-title>a, .panel-title>a:active {
+    padding: 10px;
+    font-size: 13px;
+    word-spacing: 0px;
+    font-weight: 400;
+}
+.container1440.mt-5.cs3 {
+    margin-top: 20px !important;
+}
+.panel-heading a:before {
+    right: -20px;}
+.panel-body {
+    font-size: 12px;
+    padding: 0px 14px 6px;
+}
+.login_form.cs3 {
+    padding: 20px 20px;
+}
+.contactus h5 {
+    font-size: 16px;}
+    .contactus p {
+    font-size: 14px;}
+    .info_cs {
+    padding: 5px 15px;
+}
+.form_group {
+    font-size: 15px;
+    margin-top: 10px;
+}
+.form-group.cs3 input.form-control {
+    width: 325px;
+}
+.form-group.cs3 select.form-control.cs{width: 325px;}
+.form-group.cs3 ul.tele_cs input.form-control {
+    width: 197px;
+}
+.pick_cs {
+    text-align: left;
+}
+/* .changs .nav.flex-column.nav-pills{margin-bottom: 30px;}
+.img_cs {
+    width: 180px;
+}
+.user-lince {
+    padding: 0px 5px 0px 0px;
+} */
+h3.manage {
+    font-size: 16px;
+    padding: 7px 0px;
+}
+.my_user {
+    padding: 13px;
+}
+li.nav-item.create_new {
+    width: 100%;
+    margin: 10px 0px;
+}
+li.nav-item.create_new a.nav-link{height: 53px}
+li.nav-item.create_new a.nav-link {
+    padding:4px 16px;font-size: 14px
+}
+li.nav-item.create_new a.nav-link.active.show {
+    padding: 11px 20px;
+    height: 53px;font-size: 16px
+}
+.search_section ul li{width: 100%}
+.main_formId{flex-wrap: wrap;}
+.condidated_name ul {
+    font-size: 12px;}
+    .viewform button.theme-btn {
+    width: 170px;
+    margin-top:0px;
+    font-size: 14px;
+    margin-right: 10px;
+}
+.my_history {
+    display: flex;
+}
+.search-icon {
+    width: 96%;
+    margin: 30px auto;
+    position: relative;
+}
+.location-name.cs3 button.theme-btn {
+    height: 43px;
+    width: 159px;
+    font-size: 13px;
+    margin-top: 20px;
+}
+.personal-details {
+    width: 100%;
+    max-width: 100%;
+}
+.details h2 {
+    font-size: 18px;
+    padding: 8px;
+}
+.details p {
+    font-size: 13px;
+    padding: 6px 0px;
+}
+.details {
+    width: 100%;
+    max-width: 90%;
+}
+.details .form-group.cs3 input.form-control {
+    width: 344px;
+    height: 42px;
+}
+.cntact-button.back button.theme-btn {
+    margin: 5px 8px;
+    width: 342px;
+    height: 45px;
+}
+.cntact-button.back {
+    flex-wrap: wrap;
+}
+.University-name.cs3 select.form-control {
+    height: 42px !important;
+}
+label {
+    font-size: 13px;}
+.radi {
+    font-size: 14px;}
+.application-form {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+}
+h5.application_pro {
+    font-size: 20px;}
+    .application-form.mt-5 h5.application_pro {
+    font-size: 18px;
+    padding-top: 0px;
+}
+.search-course {
+    padding: 15px 0px;
+}
+.academic{
+    padding: 0px;
+}
+.form-group textarea.form-control {
+    height: 90px;
+}
+.academic p {
+    font-size: 13px;}
+    .custom-button {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0px;
+    padding: 10px 0px;
+}
+.custom-radio {
+    font-size: 16px;
+}
+.continue p {
+    font-size: 13px !important;
+    padding: 15px 0px;
+}
+.continue h2 {
+    margin: 0px;
+    font-size: 20px;}
+    .continue h6 {
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+p.which {
+    font-size: 14px !important;
+    margin: 0px;
+}
+.the_course {
+   width: 100%;
+    max-width: 100%;
+}
+.course_type ul {
+    padding-top: 10px;
+    font-size: 13px;
+}
+.question_aras h2 {
+    font-size: 20px;
+    padding: 0px;
+}
+.question_aras p {
+    font-size: 13px !important;
+    width: 100%;
+}
+.edit_datails h4 {
+    font-size: 14px;
+}
+.edit button.button.active {
+    width: 102px;
+    height: 39px;
+    font-size: 15px;
+    border-radius: 10px;
+}
+.search_by_reset .cntact-button {
+    padding: 0px;
+    margin-left: 0px;
+    margin-top: 20px;
+}
+.matching h6 {
+    font-size: 15px;
+    margin: 25px 0px;
+}
+i.fa.fa-sort-desc {
+    top: 8px;
+    left: 92%;
+}
+.search_by_reset{
+    flex-wrap: wrap;
+}
+}
+@media(max-width:375px){
+
+    .sign_in button.theme-btn.active {
+    width: 300px;
+}
+select.form-control.kingdom {
+    background: #fff url(../images/icon-drop.png) 267px 15px no-repeat;
+}
+input.form-control.location_search {
+    background: #fff url(../images/search-icon.png) 256px 12px no-repeat;
+}
+.h_apply ul li button.theme-btn {
+    width: 135px;
+}
+.representative {
+    padding: 17px 17px;
+}
+.h_apply {
+    margin: 7% auto;}
+.panel-title>a, .panel-title>a:active {
+    padding: 5px;
+    font-size: 12px;
+}
+.panel-heading a:before {
+    right: -29px;
+}
+.cntact-button {
+    padding: 28px 0px 22px;
+}
+.cntact-button button.theme-btn {
+    width: 108px;
+    font-size: 15px;
+}
+.form-group.cs3 input.form-control {
+    width: 280px;
+}
+.form-group.cs3 select.form-control.cs{width: 280px}
+label {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+h4.manage {
+    font-size: 18px;
+    padding: 15px 0px;
+}
+.form-group.cs3 select.form-control.f_cs {
+    background: url(../images/icon-drop.png) 56px 12px no-repeat;
+}
+.user-lince {
+    width: 100%;
+    max-width: 100%;
+    padding: 0px;
+}
+.my_user{padding: 10px  ;}
+.pick_cs p {
+    font-size: 16px;
+    padding: 7px 0px;
+    margin: 0px;
+}
+.pick_cs i.fa.fa-pencil-square-o {
+    width: 20px;
+    height: 20px;
+    font-size: 13px;
+    top: 17px;
+    right: -7px;
+    padding: 5px 5px;
+}
+p.ipaum {
+    font-size: 14px;
+    padding-top: 20px;
+}
+.month_cs ul li{
+padding: 0px;   
+}
+.left_section{padding: 0px}
+.img_cs figure img{height: 100%}
+h3.manage {
+    font-size: 16px;
+    padding: 7px 0px 25px;
+}
+.month_cs ul li {
+    font-size: 11px;
+}
+.month_cs h1 {
+    font-size: 13px;
+}
+.manage_user ul li {
+    width: 47%;
+}
+.viewform button.theme-btn {
+    width: 140px;font-size: 13px
+}
+.entry ul {
+    font-size: 12px;
+}
+.location-name.cs3 button.theme-btn {
+    height: 43px;
+    width: 136px;
+    font-size: 11px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+h5.application_pro {
+    font-size: 18px;}
+input.form-control {
+    width: 100%;
+    height: 38px;
+    border-radius: 10px;
+}
+.location-sec{
+    padding: 15px;
+}
+.details .form-group.cs3 input.form-control {
+    width: 299px;
+}
+.personal-details button.theme-btn {
+    margin: 5px 8px;
+    width: 342px;
+    height: 42px;
+}
+i.fa.fa-calendar {
+    top: 42px;
+    right: 15px;
+}
+.modal-content.cs3{
+    padding:0px;
+}
+.search_by_reset .cntact-button {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.matching {
+    padding: 17px 8px;
+}
+}
+
+
+@media(max-width: 360px){
+    
+    input.form-control.subject {
+    width: 332px;
+    height: 46px;
+}
+.rmit {
+    width: 100%;
+}
+.sign_in button.theme-btn.active {
+    width: 284px;
+}
+}

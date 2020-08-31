@@ -1,0 +1,213 @@
+<section>
+    <div class="container1440 mt-5">
+        <h5 class="application_pro">Application Form</h5>
+        <div class="application-form mt-5">
+            <form [formGroup]="section7Form">
+                <div class="academic">
+                    <h5 class="application_pro">References</h5>
+                    <div class="form-group">
+                        <label>Referee  1 Name :</label>
+                        <input type="email" class="form-control" placeholder="Referee  1 Name" formControlName="refree1name"
+                        [ngClass]="{ 'is-invalid': submitted && section7Form.get('refree1name').hasError('required') }">  
+                          <div *ngIf="submitted && section7Form.get('refree1name').hasError" >
+                            <div *ngIf="section7Form.get('refree1name').hasError('required')" class="danger">
+                                *please enter the name
+                            </div>
+                          </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Referee 1 Title :</label>
+                        <input type="text" class="form-control" placeholder="Referee 1 Title" formControlName="refree1title"
+                        [ngClass]="{ 'is-invalid': submitted && section7Form.get('refree1title').hasError('required') }">  
+                          <div *ngIf="submitted && section7Form.get('refree1title').hasError" >
+                            <div *ngIf="section7Form.get('refree1title').hasError('required')" class="danger">
+                                *please enter the title
+                            </div>
+                          </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Referee 1 Address :</label>
+                        <input type="email" class="form-control" placeholder="Referee 1 Address" formControlName="refree1address"
+                        [ngClass]="{ 'is-invalid': submitted && section7Form.get('refree1address').hasError('required') }">  
+                          <div *ngIf="submitted && section7Form.get('refree1address').hasError" >
+                            <div *ngIf="section7Form.get('refree1address').hasError('required')" class="danger">
+                                *please enter the address
+                            </div>
+                          </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Referee 1 Telephone Number :</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          <ngx-intl-tel-input
+                            [inputId]="'adsasd'"
+                            [cssClass]="'custom form-control'" 
+                            [preferredCountries]="preferredCountries"
+                            [enableAutoCountrySelect]="false" 
+                            [enablePlaceholder]="true" 
+                            [searchCountryFlag]="true"
+                            [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]"
+                            [selectFirstCountry]="false" 
+                            [selectedCountryISO]="CountryISO.India"
+                            [maxLength]="13" 
+                            [tooltipField]="TooltipLabel.Name" 
+                            [phoneValidation]="true" 
+                            [separateDialCode]="separateDialCode"
+                            name="phone"
+                            (keyup)="phoneValidOrNot1()"
+                            formControlName="refree1phoneNumber">
+                        </ngx-intl-tel-input>
+                        <span>
+                            <p *ngIf="section7Form.get('refree1phoneNumber').hasError('required') && section7Form.get('refree1phoneNumber').touched" class="danger">
+                                *please enter the refree1phoneNumber
+                            </p>
+                            <p *ngIf="!validPhoneNo1" class="danger">
+                              *please enter the valid Phone Number
+                            </p>
+                        </span>
+                    </div>
+
+                    <div class="form-group">
+                      <label>Referee 1 email :</label>
+                      <input type="email" class="form-control" placeholder="Referee 2 Address" formControlName="refree1email"
+                      [ngClass]="{ 'is-invalid': submitted && section7Form.get('refree1email').hasError('required') }">  
+                        <div *ngIf="submitted && section7Form.get('refree1email').hasError" >
+                          <div *ngIf="section7Form.get('refree1email').hasError('required')" class="danger">
+                              *please enter the email
+                          </div>
+                          <div *ngIf="section7Form.get('refree1email').hasError('pattern')" class="danger">
+                              *please enter the valid email
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>In what capacity does the referee 1 know you?</label>
+                        <textarea class="form-control" rows="3" formControlName="refree1Description"                         
+                          [ngClass]="{ 'is-invalid': submitted && section7Form.get('refree1Description').hasError('required') }">  
+                        </textarea>
+                        <div *ngIf="submitted && section7Form.get('refree1Description').hasError" >
+                          <div *ngIf="section7Form.get('refree1Description').hasError('required')" class="danger">
+                              *please enter the description
+                          </div>
+                        </div>
+                    </div>
+                </div>  
+
+                <div class="academic mt-5">
+                    <div class="form-group mt-5">
+                        <label>Referee  2 Name :</label>
+                        <input type="email" class="form-control" placeholder="Referee  2 Name" formControlName="refree2name"
+                        [ngClass]="{ 'is-invalid': submitted && section7Form.get('refree2name').hasError('required') }">  
+                          <div *ngIf="submitted && section7Form.get('refree2name').hasError" >
+                            <div *ngIf="section7Form.get('refree2name').hasError('required')" class="danger">
+                                *please enter the name
+                            </div>
+                          </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Referee 2 Title :</label>
+                        <input type="text" class="form-control" placeholder="Referee 2 Title" formControlName="refree2title"
+                        [ngClass]="{ 'is-invalid': submitted && section7Form.get('refree2title').hasError('required') }">  
+                          <div *ngIf="submitted && section7Form.get('refree2title').hasError" >
+                            <div *ngIf="section7Form.get('refree2title').hasError('required')" class="danger">
+                                *please enter the title
+                            </div>
+                          </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Referee 2 Address :</label>
+                        <input type="email" class="form-control" placeholder="Referee 2 Address" formControlName="refree2address"
+                        [ngClass]="{ 'is-invalid': submitted && section7Form.get('refree2address').hasError('required') }">  
+                          <div *ngIf="submitted && section7Form.get('refree2address').hasError" >
+                            <div *ngIf="section7Form.get('refree2address').hasError('required')" class="danger">
+                                *please enter the address
+                            </div>
+                          </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Referee 2 Telephone Number :</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          <ngx-intl-tel-input
+                          [inputId]="'adsasd'"
+                          [cssClass]="'custom form-control'" 
+                          [preferredCountries]="preferredCountries"
+                          [enableAutoCountrySelect]="false" 
+                          [enablePlaceholder]="true" 
+                          [searchCountryFlag]="true"
+                          [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]"
+                          [selectFirstCountry]="false" 
+                          [selectedCountryISO]="CountryISO.India"
+                          [maxLength]="13" 
+                          [tooltipField]="TooltipLabel.Name" 
+                          [phoneValidation]="true" 
+                          [separateDialCode]="separateDialCode"
+                          name="phone"
+                          (keyup)="phoneValidOrNot2()"
+                          formControlName="refree2phoneNumber">
+                      </ngx-intl-tel-input>
+                      <span>
+                          <p *ngIf="section7Form.get('refree2phoneNumber').hasError('required') && section7Form.get('refree2phoneNumber').touched" class="danger">
+                              *please enter the refree2phoneNumber
+                          </p>
+                          <p *ngIf="!validPhoneNo2" class="danger">
+                            *please enter the valid Phone Number
+                          </p>
+                      </span>
+                    </div>
+
+                    <div class="form-group">
+                      <label>Referee 2 email :</label>
+                      <input type="email" class="form-control" placeholder="Referee 2 Address" formControlName="refree2email"
+                      [ngClass]="{ 'is-invalid': submitted && section7Form.get('refree2email').hasError('required') }">  
+                        <div *ngIf="submitted && section7Form.get('refree2email').hasError" >
+                          <div *ngIf="section7Form.get('refree2email').hasError('required')" class="danger">
+                              *please enter the email
+                          </div>
+                          <div *ngIf="section7Form.get('refree2email').hasError('pattern')" class="danger">
+                              *please enter the valid email
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>In what capacity does the referee 2 know you?</label>
+                        <textarea class="form-control" rows="3" formControlName="refree2Description"
+                          [ngClass]="{ 'is-invalid': submitted && section7Form.get('refree2Description').hasError('required') }">  
+                        </textarea>
+                        <div *ngIf="submitted && section7Form.get('refree2Description').hasError" >
+                          <div *ngIf="section7Form.get('refree2Description').hasError('required')" class="danger">
+                              *please enter the Description
+                          </div>
+                        </div>
+                    </div>
+                </div>  
+
+                <div class="cntact-button back">
+                    <button class="theme-btn router-link" [routerLink]="['/section6']">Back</button>
+                    <button class="theme-btn active router-link" (click)="continue()">Continue</button>
+                    <button class="theme-btn router-link" (click)="saveAndQuit()">Save and Quit</button>
+                </div>
+            </form>
+       </div>          
+   </div>
+</section>
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+      <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">&nbsp;</h5>
+      </div>
+      <div class="modal-body">
+          Congratulations your form has been submitted successfully!You will get the email notification of each status of your form.
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="theme-btn router-link  okay" data-dismiss="modal" [routerLink]="['/dashboard']">OK</button>
+      </div>
+      </div>
+  </div>
+</div>

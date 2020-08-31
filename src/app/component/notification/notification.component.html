@@ -1,0 +1,55 @@
+<section style="min-height: 450px;">
+    <div class="container1440 mt-5">
+        <h1 style="margin-left: 40%;font-size: 3.2rem;font-weight: bold;"> Notifications</h1>
+        <div style="height: 30px;width: 100%;">
+            <div style="position: absolute; right:0px" *ngIf="notificationList.length != 0">
+                <button class="theme-btn router-link" (click)="clearAll()" >Clear all</button> 
+            </div>
+        </div>
+        <div class="application_cs">
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-contact" role="tabpanel"
+                    aria-labelledby="pills-contact-tab">
+
+                    <div class="main_formId mt-4" *ngFor="let item of notificationList">
+                        <div class="form_submit">
+                            <div class="condidated_name">
+                                {{item.descriptionForUser}}
+                            </div>
+                        </div>
+                        <div class="my_history">
+                            <div class="" (click)="deleteNotification(item)">
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="tab-pane fade" id="pills-contact1" role="tabpanel" aria-labelledby="pills-contact-tab">...
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+   aria-hidden="true">
+   <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content with_a">
+
+         <div class="modal-body">
+            <h6 class="your_pass cs3">
+               <!-- Congratulation! -->
+               <p class="plan"> Are you sure you want to Delete ?</p>
+            </h6>
+
+            <div class="ok_cs" style="cursor: pointer;">
+               <button class="banner-button cs3" data-dismiss="modal">No</button>
+               <button class="banner-button active"  (click)="confirmDelete()">Yes</button>
+            </div>
+         </div>
+      </div>
+
+   </div>
+</div>

@@ -1,0 +1,45 @@
+.form_submit{
+    max-width: 71% !important;
+}
+.main_formId{
+    padding: 23px 40px 23px 40px !important;
+    margin-bottom: 20px !important;
+}
+.modal-content.thanks_for {
+    padding: 34px 32px;
+    text-align: center;
+}
+.modal-content.thanks_for button.banner-button.active {
+    width: 97px;
+    height: 37px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+.modal-body.modal_cs button.banner-button {
+    width: 150px;
+    margin-top: 25px;
+}
+.modal-body.modal_cs button.banner-button {
+    width: 150px;
+    margin-top: 25px;
+}
+button.banner-button.active {
+    color: #fff !important;
+    background: #896633;
+    border: 1px solid #896634;
+}
+button.banner-button:hover {
+    color: #ffff;
+    background: #896633;
+    border: 1px solid #896633;
+}
+button.banner-button {
+    width: 120px;
+    height: 35px;
+    background-color: #ffffff;
+    font-size: 16px;
+    color: #bc7f45;
+    border: 1px solid #896633;
+   margin-top: 6px;
+    font-weight: 400;
+}

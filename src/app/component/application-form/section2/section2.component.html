@@ -1,0 +1,140 @@
+<section>
+    <div class="container1440 mt-5">
+        <h5 class="application_pro">Application Form</h5><br><br>
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+          <li class="nav-item create_new">
+              <a class="nav-link find active  " id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
+                aria-controls="pills-home" [routerLink]="['/section1']" aria-selected="true">Create New Application</a>
+          </li>
+          <li class="nav-item create_new">
+            <a class="nav-link " id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
+                aria-controls="pills-profile" [routerLink]="['/draft-form']" aria-selected="false">Find and Continue
+                Incomplete Applications</a>
+          </li>
+          <li class="nav-item create_new">
+              <a class="nav-link " id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab"
+                aria-controls="pills-contact" [routerLink]="['/dashboard']" aria-selected="false">Submitted Application or
+                Applicants</a>
+          </li>
+          <li class="nav-item create_new">
+              <a class="nav-link find " id="pills-contact-tab" data-toggle="pill" href="#pills-contact1" role="tab"
+                aria-controls="pills-contact" [routerLink]="['/report']" aria-selected="false">Reports</a>
+          </li>
+      </ul>
+         <div class="application-form mt-5">
+           <div class="academic">
+             <h5 class="application_pro">Course applied</h5>
+                      <div class="search-course">
+                          <div class="example-full-width" matAutocompleteOrigin #origin="matAutocompleteOrigin">
+                            <input matInput  [formControl]="searchCourse"  [matAutocomplete]="auto" [matAutocompleteConnectedTo]="origin" class="form-control search" placeholder="Search"  [ngClass]="{ 'is-invalid': submitted && section2Form.get('searchCourse').hasError('required') }">
+                            <i class="fa fa-search"></i>
+                          </div>
+                          <mat-autocomplete #auto="matAutocomplete" (optionSelected)='selectCourse()'>
+                            <mat-option *ngFor="let option of filteredOptions | async" [value]="option.courseName">
+                              {{option.courseName}}
+                            </mat-option>
+                          </mat-autocomplete>
+                          <div *ngIf="submitted && section2Form.get('searchCourse').hasError" >
+                            <div *ngIf="section2Form.get('searchCourse').hasError('required')" class="danger">
+                              *please enter the searchCourse
+                            </div>
+                          </div> 
+                        </div>
+                  <form [formGroup]="section2Form">
+                      <div class="University-name cs3 mb-3">
+                          <label>Select Country :</label>
+                          <select class="form-control" formControlName="countryName"
+                          [ngClass]="{ 'is-invalid': submitted && section2Form.get('countryName').hasError('required') }">    
+                            <option disabled selected value=""> Select county</option>
+                            <option *ngFor="let item of countryList" value="{{item.country}}">{{item.country}}</option>
+                          </select>
+                          <i class="fa fa-sort-down"></i>
+                          <div *ngIf="submitted && section2Form.get('countryName').hasError" >
+                            <div *ngIf="section2Form.get('countryName').hasError('required')" class="danger">
+                                *please enter the countryName
+                            </div>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Start Year :</label>
+                        <select  formControlName="startYear"  class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && section2Form.get('startYear').hasError('required') }"> 
+                          <option disabled selected value="">Select year</option>
+                          <option *ngFor="let item of yearList" value="{{item}}">{{item}}</option>
+                        </select>   
+                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                          <div *ngIf="submitted && section2Form.get('startYear').hasError" >
+                            <div *ngIf="section2Form.get('startYear').hasError('required')" class="danger">
+                                *please enter the startYear
+                            </div>
+                          </div>      
+                      </div>
+
+                      <div class="form-group">
+                          <label for="exampleInputEmail1">Start Month :</label> 
+                          <select  formControlName="startMonth"  class="form-control"
+                          [ngClass]="{ 'is-invalid': submitted && section2Form.get('startMonth').hasError('required') }"> 
+                            <option disabled selected value="">Select month</option>
+                            <option *ngFor="let item of MonthList" value="{{item.month}}">{{item.monthName}}</option>
+                          </select>  
+                          <i class="fa fa-calendar" aria-hidden="true"></i>
+                          <div *ngIf="submitted && section2Form.get('startMonth').hasError" >
+                            <div *ngIf="section2Form.get('startMonth').hasError('required')" class="danger">
+                                *please enter the startMonth
+                            </div>
+                          </div>      
+                      </div>
+
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Year / Intake if not applying for next intake :</label>
+                        <input type="date" class="form-control" placeholder="DD/MM/YY" formControlName="yearIntake"
+                          [ngClass]="{ 'is-invalid': submitted && section2Form.get('yearIntake').hasError('required') }">    
+                          <!-- <i class="fa fa-calendar" aria-hidden="true"></i> -->
+                          <div *ngIf="submitted && section2Form.get('yearIntake').hasError" >
+                            <div *ngIf="section2Form.get('yearIntake').hasError('required')" class="danger">
+                                *please enter the yearIntake
+                            </div>
+                          </div>     
+                      </div>
+                  </form>
+                  </div>  
+                  <div class="cntact-button back">                          
+                      <button class="theme-btn router-link" [routerLink]="['/dashboard']">Back to Dashboard</button>
+                      <button class="theme-btn active router-link" (click)="continue()">Continue</button>
+                      <button class="theme-btn router-link" (click)="saveAndQuit()">Save and Quit</button>
+                  </div>
+        </div>          
+   </div>
+</section>
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+      <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">&nbsp;</h5>
+      </div>
+      <div class="modal-body">
+          Congratulations your form has been submitted successfully!You will get the email notification of each status of your form.
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="theme-btn router-link  okay" data-dismiss="modal" [routerLink]="['/dashboard']">OK</button>
+      </div>
+      </div>
+  </div>
+</div>
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+      <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">&nbsp;</h5>
+      </div>
+      <div class="modal-body">
+          Congratulations your form has been submitted successfully!You will get the email notification of each status of your form.
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="theme-btn router-link  okay" data-dismiss="modal" [routerLink]="['/dashboard']">OK</button>
+      </div>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,250 @@
+<section>
+    <div class="container1440 mt-5">
+        <div class="subscribe">
+            <div class="left_section">
+                <div class="pick_cs">
+                    <a><img src="{{accountData.imageUrl}}">
+                    </a>
+                    <p>{{accountData.firstName}}</p>
+                </div>
+                <div class="changs">
+                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <a class="nav-link  general_cs" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home"
+                            role="tab" aria-controls="v-pills-home" aria-selected="true"
+                            [routerLink]="['/my-profile']">Manage
+                            General Info</a>
+                        <a class="nav-link  general_cs" id="v-pills-profile-tab" data-toggle="pill"
+                            href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false"
+                            [routerLink]="['/change-password']">Change Password</a>
+                        <a class="nav-link active general_cs" id="v-pills-messages-tab" data-toggle="pill"
+                            href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false"
+                            [routerLink]="['/my-subscription']" *ngIf="accountData?.role != 'REPRESENTATIVE_USER'">My
+                            Subscription</a>
+                        <a class="nav-link general_cs" id="v-pills-settings-tab" data-toggle="pill"
+                            href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false"
+                            [routerLink]="['/subscription-history']">Subscription History</a>
+                        <a class="nav-link general_cs" id="v-pills-settings-tab" data-toggle="pill"
+                            href="#v-pills-settings1" role="tab" aria-controls="v-pills-settings" aria-selected="false"
+                            [routerLink]="['/manage-users']" *ngIf="accountData?.role != 'REPRESENTATIVE_USER'">Manage
+                            Users</a>
+                        <a class="nav-link general_cs" id="v-pills-settings-tab" data-toggle="pill"
+                            href="#v-pills-settings2" role="tab" aria-controls="v-pills-settings" aria-selected="false"
+                            [routerLink]="['/create-users']" *ngIf="accountData?.role != 'REPRESENTATIVE_USER'">Create
+                            User</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-section">
+                <h4 class="manage">Payment</h4>
+                <div class="tab-content" id="v-pills-tabContent">
+                    <div class="tab-pane fade  show active " id="v-pills-home" role="tabpanel"
+                        aria-labelledby="v-pills-home-tab">
+                    </div>
+                    <div class="tab-pane fade show active" id="v-pills-profile" role="tabpanel"
+                        aria-labelledby="v-pills-profile-tab">
+
+                        <div class="general-info">
+                            <div class="info-box">
+
+                                <div class="form_section">
+                                    <div class="card-payment-div">
+                                        <div class="total-pay">
+                                            <h6>&nbsp;</h6>
+                                            <h6>TOTAL PRICE <label>$ {{amount}}</label></h6>
+                                        </div>
+                                        <form [formGroup]="paymentForm">
+                                            <div class="new-card mt-5">
+                                                <h6 class="mb-3">Enter Card Details</h6>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <input type="text" class="form-control mb-3"
+                                                            formControlName="name" placeholder="Account Holder Name">
+                                                        <div *ngIf="submitted && paymentForm.get('name').hasError"
+                                                            class="mb-2">
+                                                            <div *ngIf="paymentForm.get('name').hasError('required')"
+                                                                class="danger">
+                                                                *please enter the name
+                                                            </div>
+                                                            <div *ngIf="paymentForm.get('name').hasError('pattern')"
+                                                                class="danger">
+                                                                *please enter the valid name
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12 ">
+                                                        <div class=" card-input-div">
+                                                            <input type="text" class="form-control mb-3"
+                                                                formControlName="nubmer" placeholder="Card Number">
+                                                            <img src="assets/images/card-img.png">
+                                                        </div>
+                                                        <div *ngIf="submitted && paymentForm.get('nubmer').hasError"
+                                                            class="mb-2">
+                                                            <div *ngIf="paymentForm.get('nubmer').hasError('required')"
+                                                                class="danger">
+                                                                *please enter the nubmer
+                                                            </div>
+                                                            <div *ngIf="paymentForm.get('nubmer').hasError('pattern')"
+                                                                class="danger">
+                                                                *please enter the valid nubmer
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 ">
+                                                        <div class="card-input-div2">
+                                                            <input type="text" class="form-control mb-3"
+                                                                formControlName="date" placeholder="Exp. Date : 09/23">
+                                                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                                                            <div *ngIf="submitted && paymentForm.get('date').hasError"
+                                                                class="mb-2">
+                                                                <div *ngIf="paymentForm.get('date').hasError('required')"
+                                                                    class="danger">
+                                                                    *please enter the date
+                                                                </div>
+                                                                <div *ngIf="paymentForm.get('date').hasError('pattern')"
+                                                                    class="danger">
+                                                                    *please enter the valid date (like 09/23)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 ">
+                                                        <div class="card-input-div">
+                                                            <input type="number" class="form-control mb-3" maxlength="3"
+                                                                formControlName="cvv" placeholder="CVV">
+                                                            <i class="fa fa-lock" aria-hidden="true"></i>
+                                                            <div *ngIf="submitted && paymentForm.get('cvv').hasError"
+                                                                class="mb-2">
+                                                                <div *ngIf="paymentForm.get('cvv').hasError('required')"
+                                                                    class="danger">
+                                                                    *please enter the cvv
+                                                                </div>
+                                                                <div *ngIf="paymentForm.get('cvv').hasError('pattern')"
+                                                                    class="danger">
+                                                                    *please enter the valid cvv
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <input type="text" class="form-control mb-3"
+                                                            formControlName="address1" placeholder="address1">
+                                                        <div *ngIf="submitted && paymentForm.get('address1').hasError"
+                                                            class="mb-2">
+                                                            <div *ngIf="paymentForm.get('address1').hasError('required')"
+                                                                class="danger">
+                                                                *please enter the address1
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12">
+                                                        <input type="text" class="form-control mb-3"
+                                                            formControlName="address2" placeholder="address2">
+                                                        <div *ngIf="submitted && paymentForm.get('address2').hasError"
+                                                            class="mb-2">
+                                                            <div *ngIf="paymentForm.get('address2').hasError('required')"
+                                                                class="danger">
+                                                                *please enter the address2
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12">
+                                                        <input type="text" class="form-control mb-3"
+                                                            formControlName="city" placeholder="City">
+                                                        <div *ngIf="submitted && paymentForm.get('city').hasError"
+                                                            class="mb-2">
+                                                            <div *ngIf="paymentForm.get('city').hasError('required')"
+                                                                class="danger">
+                                                                *please enter the city
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12">
+                                                        <select class="form-control mb-3" formControlName="country"
+                                                            (change)="getState($event)">
+                                                            <option disabled selected value="">Select country</option>
+                                                            <option *ngFor="let item of countryList"
+                                                                value="{{item.country}}">{{item.country}}</option>
+                                                        </select>
+                                                        <div *ngIf="submitted && paymentForm.get('country').hasError"
+                                                            class="mb-2">
+                                                            <div *ngIf="paymentForm.get('country').hasError('required')"
+                                                                class="danger">
+                                                                *please enter the country
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12">
+                                                        <select class="form-control mb-3" formControlName="state">
+                                                            <option selected disabled value="">Select state</option>
+                                                            <option *ngFor="let item of stateList" value="{{item}}">
+                                                                {{item}}</option>
+                                                        </select>
+                                                        <div *ngIf="submitted && paymentForm.get('state').hasError"
+                                                            class="mb-2">
+                                                            <div *ngIf="paymentForm.get('state').hasError('required')"
+                                                                class="danger">
+                                                                *please enter the state
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12">
+                                                        <input type="number" class="form-control mb-3"
+                                                            formControlName="zipcode" placeholder=" zipcode">
+                                                        <div *ngIf="submitted && paymentForm.get('zipcode').hasError"
+                                                            class="mb-2">
+                                                            <div *ngIf="paymentForm.get('zipcode').hasError('required')"
+                                                                class="danger">
+                                                                *please enter the zipcode
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="text-center mt-3 mb-3">
+                                        <button class="banner-button cs3" data-toggle="modal" data-target="#successful"
+                                            (click)="proceed()">PROCEED</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="modal fade bd-example-modal-sm" id="paymentSuccess" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content thanks_for">
+            <h6>{{responseMessage?.message}}</h6>
+            <div>
+                <button class="banner-button active" data-toggle="modal"
+                    data-dismiss="modal" (click)="addToCartSubscription()">Ok</button> </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade bd-example-modal-sm" id="subscriptionSuccess" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content thanks_for">
+            <h6>{{responseMessage?.message}}</h6>
+            <div>
+                <button class="banner-button active" data-toggle="modal"
+                    data-dismiss="modal" (click)="checkStatus()">Ok</button> </div>
+        </div>
+    </div>
+</div>

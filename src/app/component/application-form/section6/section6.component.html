@@ -1,0 +1,75 @@
+<section>
+    <div class="container1440 mt-5">
+        <h5 class="application_pro">Application Form</h5>
+         <div class="application-form mt-5">
+            <form [formGroup]="section6Form">
+                <div class="academic">
+                    <h5 class="application_pro">Professional Qualifications</h5>
+                    <div class="form-group">
+                      <label>Qualifications Title :</label>
+                      <input type="email" class="form-control" placeholder="Qualifications Title" formControlName = "title"
+                      [ngClass]="{ 'is-invalid': submitted && section6Form.get('title').hasError('required') }">
+                      <div *ngIf="submitted && section6Form.get('title').hasError" >
+                          <div *ngIf="section6Form.get('title').hasError('required')" class="danger">
+                              *please enter the title
+                          </div>
+                      </div>
+                    </div>
+
+                      <div class="form-group">
+                      <label>Subject :</label>
+                      <input type="text" class="form-control" placeholder="Subject" formControlName = "subject"
+                      [ngClass]="{ 'is-invalid': submitted && section6Form.get('subject').hasError('required') }">
+                      <div *ngIf="submitted && section6Form.get('subject').hasError" >
+                          <div *ngIf="section6Form.get('subject').hasError('required')" class="danger">
+                              *please enter the subject
+                          </div>
+                      </div>
+                    </div>
+
+                      <div class="form-group">
+                      <label for="exampleInputEmail1">Date Awarded :</label>
+                      <input type="date" class="form-control" placeholder="DD/MM/YY"  formControlName = "date"
+                      [ngClass]="{ 'is-invalid': submitted && section6Form.get('date').hasError('required') }">
+                      <div *ngIf="submitted && section6Form.get('date').hasError" >
+                          <div *ngIf="section6Form.get('date').hasError('required')" class="danger">
+                              *please enter the date
+                          </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label>Professional Body Membership :</label>
+                      <input type="text" class="form-control" formControlName = "proffessionalBody"
+                      [ngClass]="{ 'is-invalid': submitted && section6Form.get('proffessionalBody').hasError('required') }">
+                      <div *ngIf="submitted && section6Form.get('proffessionalBody').hasError" >
+                          <div *ngIf="section6Form.get('proffessionalBody').hasError('required')" class="danger">
+                              *please enter the proffessionalBody
+                          </div>
+                      </div>
+                    </div>
+                </div>  
+                <div class="cntact-button back">
+                    <button class="theme-btn router-link" [routerLink]="['/section5']">Back</button>
+                    <button class="theme-btn active router-link" (click)="continue()">Continue</button>
+                    <button class="theme-btn router-link" (click)="saveAndQuit()">Save and Quit</button>
+                </div>
+            </form>
+        </div>          
+   </div>
+</section>
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">&nbsp;</h5>
+        </div>
+        <div class="modal-body">
+            Congratulations your form has been submitted successfully!You will get the email notification of each status of your form.
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="theme-btn router-link  okay" data-dismiss="modal" [routerLink]="['/dashboard']">OK</button>
+        </div>
+        </div>
+    </div>
+</div>

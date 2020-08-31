@@ -1,0 +1,157 @@
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.flex-column {
+    flex-direction: column!important;
+}
+/* a.nav-link.payment-link.active {
+    padding: 13px;
+    text-align: center;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #ffffff;
+    background-color: #896634
+}
+a.nav-link.payment-link {
+    border: 1px solid #ccc;
+}
+a.nav-link.payment-link {
+    padding: 13px;
+    text-align: center;
+}
+.nav-pills .nav-link {
+    font-size: 19px;
+}
+.nav-pills .nav-link {
+    border-radius: .25rem;
+}
+.nav-link {
+    display: block;
+} */
+.tab-content>.active {
+    display: block;
+}
+.text-center {
+    text-align: center!important;
+}
+.total-pay {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.total-pay h6 {
+    font-size: 20px;
+    margin: 0;
+}
+.total-pay h6 label {
+    margin: 0;
+    font-size: 20px;
+    color: #896635;
+    padding-left: 11px;
+}
+.credit-card {
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-top: 10px;
+}
+.bank-img {
+    display: flex;
+    align-items: center;
+}
+input.form-control {
+    width: 221px;
+    height: 58px;
+    border-radius: 0px;
+}
+.bank-img h6 {
+    font-size: 18px;
+    padding-left: 20px;
+}
+.new-card {
+    width: 100%;
+    max-width: 85%;
+}
+.new-card h6 {
+    font-size: 20px;
+}
+@media (min-width: 768px){
+    .col-md-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+.new-card input {
+    width: 100%;
+}
+.card-input-div2 i {
+    position: absolute;
+    right: 28px;
+    top: 12px;
+    font-size: 30px;
+    color: #7f7f7f;
+}
+.card-input-div {
+    position: relative;
+}
+.card-input-div i {
+    font-size: 40px;
+    position: absolute;
+    top: 9px;
+    left: 13px;
+    color: #7f7f7f;
+}
+.new-card input {
+    width: 100%;
+}
+.card-input-div img {
+    position: absolute;
+    top: 14px;
+    left: 10px;
+}
+.card-input-div {
+    position: relative;
+}
+.card-input-div input {
+    padding-left: 70px;
+}
+.new-card input {
+    width: 100%;
+}
+button.banner-button.active {
+    color: #fff !important;
+    background: #896633;
+    border: 1px solid #896634;
+}
+button.banner-button:hover {
+    color: #ffff;
+    background: #896633;
+    border: 1px solid #896633;
+}
+button.banner-button {
+    width: 180px;
+    height: 50px;
+    background-color: #ffffff;
+    font-size: 16px;
+    color: #bc7f45;
+    border: 1px solid #896633;
+   margin-top: 6px;
+    font-weight: 400;
+}
+
+
+
+
+
+.danger {
+    margin-top :-15px;
+}
+select.form-control {
+    height: 58px !important;
+    border-radius: 10px;
+}

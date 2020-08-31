@@ -1,0 +1,140 @@
+<section>
+    <div class="container1440 mt-5">
+        <h5 class="application_pro">Application Form</h5>
+        <div class="application-form mt-5">
+            <form [formGroup]="section15Form">
+                <div class="academic">
+                  <h5 class="application_pro cs3">Additional Section - Executive MBA</h5>
+                  <p class="for_mba">Additional requirements for Executive MBA</p>
+
+                  <div class="form-group mt-3">
+                      <label>
+                          How many years relevant full-time managerial work experience do you have?
+                      </label>
+                      <input type="number" class="form-control" formControlName="fullTimeManagerialExperience" 
+                          [ngClass]="{ 'is-invalid': submitted && section15Form.get('fullTimeManagerialExperience').hasError('required') }" >
+                      <div *ngIf="submitted && section15Form.get('fullTimeManagerialExperience').hasError" >
+                          <div *ngIf="section15Form.get('fullTimeManagerialExperience').hasError('required')" class="danger">
+                            *please enter the fullTimeManagerialExperience
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="form-group mt-3">
+                      <label>
+                          How many years total work experience do you have?
+                      </label>
+                      <input type="number" class="form-control" formControlName="totalExperience" 
+                          [ngClass]="{ 'is-invalid': submitted && section15Form.get('totalExperience').hasError('required') }" >
+                      <div *ngIf="submitted && section15Form.get('totalExperience').hasError" >
+                          <div *ngIf="section15Form.get('totalExperience').hasError('required')" class="danger">
+                            *please enter the totalExperience
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <h6>Managerial activity :</h6>
+
+                  <div class="form-group mt-3">
+                      <label>
+                          An involvement in strategic planning and decision-making that affects events beyond standard
+                          operational activities.
+                    </label>
+                      <input type="text" class="form-control" formControlName="involmentInStrategicPlanning" 
+                          [ngClass]="{ 'is-invalid': submitted && section15Form.get('involmentInStrategicPlanning').hasError('required') }" >
+                      <div *ngIf="submitted && section15Form.get('involmentInStrategicPlanning').hasError" >
+                          <div *ngIf="section15Form.get('involmentInStrategicPlanning').hasError('required')" class="danger">
+                            *please enter the involmentInStrategicPlanning
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="form-group mt-3">
+                      <label>
+                          A responsibility for co-ordinating the work of others in a team.
+                      </label>
+                      <input type="text" class="form-control" formControlName="coordinatingInTeam" 
+                          [ngClass]="{ 'is-invalid': submitted && section15Form.get('coordinatingInTeam').hasError('required') }" >
+                      <div *ngIf="submitted && section15Form.get('coordinatingInTeam').hasError" >
+                          <div *ngIf="section15Form.get('coordinatingInTeam').hasError('required')" class="danger">
+                            *please enter the coordinatingInTeam
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="form-group mt-3">
+                      <label>
+                        A responsibility for meeting financial targets that rely on the efforts of more than one person.
+                      </label>
+                      <input type="text" class="form-control" formControlName="meetingFinancialTargets"
+                          [ngClass]="{ 'is-invalid': submitted && section15Form.get('meetingFinancialTargets').hasError('required') }" >
+                      <div *ngIf="submitted && section15Form.get('meetingFinancialTargets').hasError" >
+                          <div *ngIf="section15Form.get('meetingFinancialTargets').hasError('required')" class="danger">
+                            *please enter the meetingFinancialTargets
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="form-group ">
+                      <label>
+                        A requirement to structure and order one’s own work activities over a period of more than one month to 
+                        solve problems and deliver results.
+                    </label>
+                      <input type="text" class="form-control" formControlName="requirementForWorkActivities" 
+                          [ngClass]="{ 'is-invalid': submitted && section15Form.get('requirementForWorkActivities').hasError('required') }" >
+                      <div *ngIf="submitted && section15Form.get('requirementForWorkActivities').hasError" >
+                          <div *ngIf="section15Form.get('requirementForWorkActivities').hasError('required')" class="danger">
+                            *please enter the requirementForWorkActivities
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="form-group mt-3">
+                      <label>
+                        A defined responsibility for improving the performance of people, processes or technology.
+                      </label>
+                      <input type="text" class="form-control" formControlName="responsibilityForImprovingPerfomance" 
+                          [ngClass]="{ 'is-invalid': submitted && section15Form.get('responsibilityForImprovingPerfomance').hasError('required') }" >
+                      <div *ngIf="submitted && section15Form.get('responsibilityForImprovingPerfomance').hasError" >
+                          <div *ngIf="section15Form.get('responsibilityForImprovingPerfomance').hasError('required')" class="danger">
+                            *please enter the responsibilityForImprovingPerfomance
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="form-group mt-3">
+                      <label>
+                        A role that primarily achieves results through influencing others rather than through direct 
+                        authority.
+                    </label>
+                      <input type="text" class="form-control" formControlName="primarilyResultsThroughInfluencing" 
+                          [ngClass]="{ 'is-invalid': submitted && section15Form.get('primarilyResultsThroughInfluencing').hasError('required') }" >
+                      <div *ngIf="submitted && section15Form.get('primarilyResultsThroughInfluencing').hasError" >
+                          <div *ngIf="section15Form.get('primarilyResultsThroughInfluencing').hasError('required')" class="danger">
+                            *please enter the primarilyResultsThroughInfluencing
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="form-group mt-3">
+                      <label>
+                          Experience of working internationally or of relevant multi-cultural exposure
+                      </label>
+                      <input type="text" class="form-control" formControlName="experienceOfInternallyWorking" 
+                          [ngClass]="{ 'is-invalid': submitted && section15Form.get('experienceOfInternallyWorking').hasError('required') }" >
+                      <div *ngIf="submitted && section15Form.get('experienceOfInternallyWorking').hasError" >
+                          <div *ngIf="section15Form.get('experienceOfInternallyWorking').hasError('required')" class="danger">
+                            *please enter the experienceOfInternallyWorking
+                          </div>
+                      </div>
+                  </div>
+
+                </div>
+                <div class="cntact-button back">
+                    <button class="theme-btn router-link" [routerLink]="['/section12']">Back</button>
+                    <button class="theme-btn router-link active" (click)="preview()">Preview</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

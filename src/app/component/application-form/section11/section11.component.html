@@ -1,0 +1,194 @@
+<section>
+    <div class="container1440 mt-5">
+        <h5 class="application_pro">Application Form</h5>
+        <div class="application-form mt-5">
+            <form [formGroup]="section11Form">
+                <div class="academic">
+                    <h5 class="application_pro">Employment for PGT Programmes</h5>
+                    <div class="form-group">
+                        <p class="do_you">Do you have work experience :</p>
+                        <div class="custom-button">
+                            <label class="custom-radio">Yes
+                                <input type="radio" value="true" (change)="change($event.target.value)" name="workExperience"
+                                  formControlName="workExperience">
+                                <span class="checkmark_cs3"></span>
+                            </label>
+                            <label class="custom-radio">No
+                                <input type="radio" value="false" (change)="change($event.target.value)" name="workExperience"
+                                  formControlName="workExperience">
+                                <span class="checkmark_cs3"></span>
+                            </label>
+                        </div>
+                        <div *ngIf="submitted && section11Form.get('workExperience').hasError" >
+                          <div *ngIf="section11Form.get('workExperience').hasError('required')" class="danger">
+                              *please enter the workExperience
+                          </div>
+                      </div>
+                    </div>
+
+                    <div class="University-name cs3 mb-3" *ngIf="workExperience">
+                        <label>Total number of years of full time work experience :</label>
+                        <select class="form-control" formControlName="totalExperience">
+                            <option disabled selected value=""> Select experience</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="12+">12+</option>
+                        </select>
+                        <i class="fa fa-sort-down"></i>
+                        <div *ngIf="workExperience" >
+                          <div *ngIf="(section11Form.value.totalExperience == null )"  class="danger">
+                              *please enter the Description
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Employers Name :</label>
+                        <input type="text" class="form-control" placeholder="Employers Name" formControlName="employersName"
+                        [ngClass]="{ 'is-invalid': submitted && section11Form.get('employersName').hasError('required') }" >
+                        <div *ngIf="submitted && section11Form.get('employersName').hasError" >
+                          <div *ngIf="section11Form.get('employersName').hasError('required')" class="danger">
+                              *please enter the employersName
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Nature of employers business :</label>
+                        <input type="text" class="form-control" placeholder="" formControlName="employersBusiness"
+                        [ngClass]="{ 'is-invalid': submitted && section11Form.get('employersBusiness').hasError('required') }" >
+                        <div *ngIf="submitted && section11Form.get('employersBusiness').hasError" >
+                          <div *ngIf="section11Form.get('employersBusiness').hasError('required')" class="danger">
+                              *please enter the employersBusiness
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Job Title :</label>
+                        <input type="email" class="form-control" placeholder="Job Title" formControlName="jobTitle"
+                        [ngClass]="{ 'is-invalid': submitted && section11Form.get('jobTitle').hasError('required') }" >
+                        <div *ngIf="submitted && section11Form.get('jobTitle').hasError" >
+                          <div *ngIf="section11Form.get('jobTitle').hasError('required')" class="danger">
+                              *please enter the jobTitle
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Brief Duties :</label>
+                        <input type="email" class="form-control" placeholder="Brief Duties" formControlName="briefDuties"
+                        [ngClass]="{ 'is-invalid': submitted && section11Form.get('briefDuties').hasError('required') }" >
+                        <div *ngIf="submitted && section11Form.get('briefDuties').hasError" >
+                          <div *ngIf="section11Form.get('briefDuties').hasError('required')" class="danger">
+                              *please enter the briefDuties
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Employed From :</label>
+                        <input type="date" class="form-control" placeholder="DD/MM/YY" formControlName="employedFrom"
+                        [ngClass]="{ 'is-invalid': submitted && section11Form.get('employedFrom').hasError('required') }" >
+                        <div *ngIf="submitted && section11Form.get('employedFrom').hasError" >
+                          <div *ngIf="section11Form.get('employedFrom').hasError('required')" class="danger">
+                              *please enter the employedFrom
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Employed To :</label>
+                        <input type="date" class="form-control" placeholder="DD/MM/YY" formControlName="employedTo"
+                        [ngClass]="{ 'is-invalid': submitted && section11Form.get('employedTo').hasError('required') }" >
+                        <div *ngIf="submitted && section11Form.get('employedTo').hasError" >
+                          <div *ngIf="section11Form.get('employedTo').hasError('required')" class="danger">
+                              *please enter the employedTo
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Gross Annual Salary (in USD) :</label>
+                        <input type="number" class="form-control" placeholder="100$" formControlName="annualSalary"
+                        [ngClass]="{ 'is-invalid': submitted && section11Form.get('annualSalary').hasError('required') }" >
+                        <div *ngIf="submitted && section11Form.get('annualSalary').hasError" >
+                          <div *ngIf="section11Form.get('annualSalary').hasError('required')" class="danger">
+                              *please enter the annualSalary
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Employers Address :</label>
+                        <input type="text" class="form-control" formControlName="employersAddress"
+                        [ngClass]="{ 'is-invalid': submitted && section11Form.get('employersAddress').hasError('required') }" >
+                        <div *ngIf="submitted && section11Form.get('employersAddress').hasError" >
+                          <div *ngIf="section11Form.get('employersAddress').hasError('required')" class="danger">
+                              *please enter the employersAddress
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Work Reference Contact email :</label>
+                        <input type="email" class="form-control" formControlName="email"
+                        [ngClass]="{ 'is-invalid': submitted && section11Form.get('email').hasError('required') }" >
+                        <div *ngIf="submitted && section11Form.get('email').hasError" >
+                          <div *ngIf="section11Form.get('email').hasError('required')" class="danger">
+                              *please enter the email
+                          </div>
+                          <div *ngIf="section11Form.get('email').hasError('pattern')" class="danger">
+                              *please enter the valid email
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Major achievements in role :</label>
+                        <input type="text" class="form-control" formControlName="achievements"
+                        [ngClass]="{ 'is-invalid': submitted && section11Form.get('achievements').hasError('required') }" >
+                        <div *ngIf="submitted && section11Form.get('achievements').hasError" >
+                          <div *ngIf="section11Form.get('achievements').hasError('required')" class="danger">
+                              *please enter the achievements
+                          </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="cntact-button back">
+                    <button class="theme-btn router-link" [routerLink]="['/section10']">Back</button>
+                    <button class="theme-btn router-link active" (click)="continue()">Continue</button>
+                    <button class="theme-btn router-link" (click)="saveAndQuit()">Save and Quit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">&nbsp;</h5>
+        </div>
+        <div class="modal-body">
+            Congratulations your form has been submitted successfully!You will get the email notification of each status of your form.
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="theme-btn router-link  okay" data-dismiss="modal" [routerLink]="['/dashboard']">OK</button>
+        </div>
+        </div>
+    </div>
+</div>
