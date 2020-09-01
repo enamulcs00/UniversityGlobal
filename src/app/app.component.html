@@ -19,16 +19,16 @@
                      <div class="dropdown-content">
                        <a class="nav-link" [routerLink]="['how-it']">How it work</a>
                        <li class="dropdown-divider"></li>
-                       <a class="nav-link" href="#">Services</a>
+                       <a class="nav-link" [routerLink]="['services']">Services</a>
                        
                      </div>
                    </div>                                                  
                   </li>
-               <li class="nav-item">
-                  <a class="nav-link">Find a Course</a>
+               <li class="nav-item" >
+                  <a class="nav-link" [routerLink]="['courses']">Find a Course</a>
                </li>
-               <li class="nav-item">
-                  <a class="nav-link">Find a University</a>
+               <li class="nav-item" *ngIf="tokenAvailable != ''">
+                  <a class="nav-link" [routerLink]="['find-univ']">Find a University</a>
                </li>
                <li class="nav-item" *ngIf="tokenAvailable == ''">
                   <a class="nav-link">Contact Us</a>
@@ -88,7 +88,7 @@
                <h3 class="footer-heading"><a>Contact us</a></h3>
                <ul class="footerli">
                   <li><a [routerLink]="['/how-to-apply']">How to Apply</a></li>
-                  <li><a>Help Center</a></li>
+                  <li><a [routerLink]="['/help']">Help Center</a></li>
                   <li><a [routerLink]="['/faq']">FAQ’s</a></li>
                </ul>
             </div>

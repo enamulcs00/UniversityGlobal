@@ -52,6 +52,16 @@ import { FavoriteCoursesComponent } from './component/favorite-courses/favorite-
 import { NotificationComponent } from './component/notification/notification.component';
 import { PaymentComponent } from './component/profile/payment/payment.component';
 import { HowItComponent } from './component/how-it/how-it.component';
+import { ServicesComponent } from './component/services/services.component';
+import { CoursesComponent } from './component/courses/courses.component';
+import { FindUniversityComponent } from './component/find-university/find-university.component';
+import { FaqComponent } from './component/faq/faq.component';
+import { HelpComponent } from './component/help/help.component';
+import { HowToApplyComponent } from './component/how-to-apply/how-to-apply.component';
+
+import { AboutUsComponent } from './component/about-us/about-us.component';
+import { TermsConditionComponent } from './component/terms-condition/terms-condition.component';
+import { PrivacyPolicyComponent } from './component/privacy-policy/privacy-policy.component';
 
 @NgModule({
   declarations: [
@@ -93,7 +103,17 @@ import { HowItComponent } from './component/how-it/how-it.component';
     FavoriteCoursesComponent,
     NotificationComponent,
     PaymentComponent,
-    HowItComponent
+    HowItComponent,
+    ServicesComponent,
+    CoursesComponent,
+    FindUniversityComponent,
+    FaqComponent,
+    HelpComponent,
+    HowToApplyComponent,
+    
+    AboutUsComponent,
+    TermsConditionComponent,
+    PrivacyPolicyComponent
   ],
   imports: [
     BrowserModule,

@@ -12,12 +12,20 @@ import { ToastrService } from 'ngx-toastr';
 
 export class ServicesService {
   
-      constructor(private http:HttpClient,private toastr:ToastrService,private spinner: NgxSpinnerService) { }
+constructor(private http:HttpClient,private toastr:ToastrService,private spinner: NgxSpinnerService) { }
   
       baseUrl = "http://182.72.203.244:2001/"
       representativeBaseUrl = 'http://localhost:4201/';
-  
+      url: string = 'http://localhost:3000/send';          //Contact Form URL
   //================ POST API =========================//
+
+  sendMessage(messageContent: any) {
+    return this.http.post(this.url,
+    JSON.stringify(messageContent),
+    { headers: new HttpHeaders({ 'Content-Type': 'application/json' }), responseType: 'text' });
+  }
+  
+
       postApi(url, data, Header) {
             let httpOptions;
             if (Header == 1) {
