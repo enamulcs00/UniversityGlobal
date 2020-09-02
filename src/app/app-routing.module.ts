@@ -1,8 +1,3 @@
-import { PrivacyPolicyComponent } from './component/privacy-policy/privacy-policy.component';
-import { TermsConditionComponent } from './component/terms-condition/terms-condition.component';
-import { AboutUsComponent } from './component/about-us/about-us.component';
-
-import { HowToApplyComponent } from './component/how-to-apply/how-to-apply.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
@@ -45,7 +40,6 @@ import { PaymentComponent } from './component/profile/payment/payment.component'
 import { HowItComponent } from './component/how-it/how-it.component';
 import { ServicesComponent } from './component/services/services.component';
 import { CoursesComponent } from './component/courses/courses.component';
-import { FaqComponent } from './component/faq/faq.component';
 import { HelpComponent } from './component/help/help.component';
 
 
@@ -96,13 +90,7 @@ const routes: Routes = [
   { path: 'application-form-preview', component: ApplicationFormPreviewComponent,canActivate :[AuthGuard] },
   { path: 'matching-universities', component: MatchingUniversitiesComponent,canActivate :[AuthGuard] },
   { path: 'view-form/:id', component: ViewFormComponent,canActivate :[AuthGuard] },
-  { path: 'faq', component: FaqComponent,canActivate :[AuthGuard] },
   { path: 'help', component: HelpComponent,canActivate :[AuthGuard] },
-  { path: 'how-to-apply', component: HowToApplyComponent,canActivate :[AuthGuard] },
-  
-  { path: 'about-us', component: AboutUsComponent,canActivate :[AuthGuard] },
-  { path: 'terms-conditions', component: TermsConditionComponent,canActivate :[AuthGuard] },
-  { path: 'privacy-policy', component: PrivacyPolicyComponent,canActivate :[AuthGuard] },
   
 ];
 
