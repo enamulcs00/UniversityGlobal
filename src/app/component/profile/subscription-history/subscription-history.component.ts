@@ -9,7 +9,7 @@ import { ServicesService } from 'src/app/services.service';
 export class SubscriptionHistoryComponent implements OnInit {
 
   accountData: any;
-  subscriptionList :any  = []
+  subscriptionList: any = [];
 
   constructor(private service:ServicesService) { }
 

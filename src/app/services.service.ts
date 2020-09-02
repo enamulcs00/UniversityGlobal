@@ -14,13 +14,13 @@ export class ServicesService {
   
 constructor(private http:HttpClient,private toastr:ToastrService,private spinner: NgxSpinnerService) { }
   
-      baseUrl = "http://182.72.203.244:2001/"
-      representativeBaseUrl = 'http://localhost:4201/';
+      baseUrl:string = "http://182.72.203.244:2001/"
+      representativeBaseUrl:string = 'http://localhost:4201/';
       url: string = 'http://localhost:3000/send';          //Contact Form URL
   //================ POST API =========================//
 
   sendMessage(messageContent: any) {
-    return this.http.post(this.url,
+    return this.http.post(this.url,         //For Contact Us Page Becaue It is missing in website
     JSON.stringify(messageContent),
     { headers: new HttpHeaders({ 'Content-Type': 'application/json' }), responseType: 'text' });
   }
