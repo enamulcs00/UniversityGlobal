@@ -16,7 +16,7 @@ constructor(private http:HttpClient,private toastr:ToastrService,private spinner
   
       baseUrl:string = "http://182.72.203.244:2001/"
       representativeBaseUrl:string = 'http://localhost:4201/';
-      url: string = 'http://localhost:3000/send';          //Contact Form URL
+      url: string = 'http://182.72.203.244:2001/static/contact-us';          //Contact Form URL
   //================ POST API =========================//
 
   sendMessage(messageContent: any) {
